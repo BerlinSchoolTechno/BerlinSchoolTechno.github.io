@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arizona Vedic Cultural Center Of Swaminarayan Gurukul USA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Utilizing Cinzel Decorative for an ancient, carved aesthetic and Lora for highly readable, elegant body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Ancient Indian Inspired Color Palette */
+            --saffron-vibrant: #FF8C00;
+            --saffron-deep: #D96C06;
+            --maroon-rich: #6A111B;
+            --maroon-dark: #4A0C13;
+            --gold-pure: #D4AF37;
+            --gold-light: #F3E5AB;
+            --bg-parchment: #FCFAF5;
+            --text-ink: #3E2723;
+            --border-subtle: rgba(212, 175, 55, 0.3);
+        }
+
+        /* Base Reset & Optimization */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--bg-parchment);
+            color: var(--text-ink);
+            line-height: 1.8;
+            /* Text-only subtle gradient background to replace the image */
+            background-image: radial-gradient(circle at 50% 0%, #FFFFFF 0%, var(--bg-parchment) 100%);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .vedic-title, h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--maroon-rich);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Banner / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-rich) 40%, var(--saffron-deep) 100%);
+            color: #FFF8E7;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            border-bottom: 6px solid var(--gold-pure);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: fadeUp 1s ease-out forwards;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--gold-light);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            color: #FFFFFF;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            color: var(--gold-light);
+            opacity: 0.9;
+        }
+
+        .hero .established {
+            font-size: 1rem;
+            margin-top: 2rem;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+        }
+
+        /* Main Container & Layout */
+        .container {
+            max-width: 1000px;
+            margin: -3rem auto 4rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Cards and Text Sections */
+        .section-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            padding: 4rem 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 40px rgba(62, 39, 35, 0.05);
+            position: relative;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out forwards;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(217, 108, 6, 0.1);
+        }
+
+        /* Staggered load times for sections */
+        .section-card:nth-child(1) { animation-delay: 0.2s; }
+        .section-card:nth-child(2) { animation-delay: 0.4s; }
+        .section-card:nth-child(3) { animation-delay: 0.6s; }
+        .section-card:nth-child(4) { animation-delay: 0.8s; }
+        .section-card:nth-child(5) { animation-delay: 1.0s; }
+
+        .section-card::before {
+            content: 'ॐ';
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: var(--saffron-deep);
+            background: #FFFFFF;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--gold-pure);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .section-card h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--maroon-rich);
+        }
+
+        .section-card h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--saffron-deep);
+        }
+
+        .section-card p {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Dividers */
+        hr.ornate {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, transparent, var(--gold-pure), transparent);
+            margin: 3rem 0;
+            opacity: 0.6;
+        }
+
+        /* Typography Lists */
+        ul.vedic-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        ul.vedic-list li {
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+        }
+
+        ul.vedic-list li:hover {
+            color: var(--saffron-deep);
+        }
+
+        ul.vedic-list li::before {
+            content: '❖';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+            color: var(--gold-pure);
+        }
+
+        ul.mission-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        ul.mission-list li {
+            background: linear-gradient(to right, rgba(217, 108, 6, 0.05), transparent);
+            margin-bottom: 1rem;
+            padding: 1.25rem;
+            border-left: 4px solid var(--saffron-vibrant);
+            border-radius: 0 4px 4px 0;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        ul.mission-list li:hover {
+            transform: translateX(10px);
+            background: linear-gradient(to right, rgba(217, 108, 6, 0.1), transparent);
+        }
+
+        /* Archive Grid - Text Only Beauty */
+        .archive-section {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 2rem 0; 
+            margin-top: 2rem;
+        }
+        
+        .archive-section::before {
+            display: none;
+        }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .archive-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-subtle);
+            border-top: 4px solid var(--saffron-deep);
+            padding: 2rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-ink);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .archive-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
+            transform: skewX(-20deg);
+            transition: none;
+        }
+
+        .archive-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(106, 17, 27, 0.15);
+            border-top-color: var(--maroon-rich);
+            background-color: var(--bg-parchment);
+        }
+
+        .archive-card:hover::after {
+            animation: shimmer 0.7s forwards;
+        }
+
+        .archive-card h4 {
+            margin: 0 0 0.75rem 0;
+            color: var(--maroon-rich);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .archive-card p {
+            margin: 0;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /* Footer & Chants */
+        .chants {
+            text-align: center;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--maroon-rich);
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            line-height: 2.5;
+            padding: 4rem 1rem;
+            background-color: #FFFFFF;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            margin: 4rem 0;
+            box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.1);
+        }
+        
+        .chant-divider {
+            color: var(--gold-pure);
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 1.15rem;
+            background: var(--bg-parchment);
+            padding: 3rem 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--gold-pure);
+            margin-top: 3rem;
+        }
+        
+        .contact-info strong {
+            font-family: 'Cinzel', serif;
+            color: var(--maroon-rich);
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .section-card { padding: 3rem 1.5rem; }
+            .hero { padding: 6rem 1rem 4rem; }
+            .container { margin-top: -2rem; padding: 0 1rem; }
+            hr.ornate { margin: 2rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <h1>Arizona Vedic Cultural Center</h1>
+        <h2>Of Swaminarayan Gurukul USA</h2>
+        <p>True Vedic Wisdom</p>
+        <p class="established">Established November 22, 2009, to teach Sanatan Dharma in the USA and around the globe.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- ABOUT US -->
+        <div class="section-card">
+            <h2>About Us</h2>
+            <p>The Supreme Lord Maha Vishnu is the source of all divine incarnations within the universe, incarnating to re-establish righteousness and protect the souls of his devotees. Lord Swaminarayan incarnated on April 2nd, 1781, in Chhapaiya village, Uttar Pradesh, India, to establish Bhagavat Dharma. This natural way of life, based on Vedic wisdom, is also known as Vedic Sanatan Dharma and consists of Dharma (moral duty), Gyan (knowledge), Vairagya (detachment from Maya), and Bhakti (devotional love of God).</p>
+        </div>
+
+        <!-- GURUPARAMPARA -->
+        <div class="section-card">
+            <h2>Guruparampara: Our Gunatit Tradition</h2>
+            <p>Lord Swaminarayan taught the Vedic Dharma to uplift humanity, sharing this wisdom through his books: the <em>Shikshapatri</em> (letter of direction), <em>Vachanamrutham</em> (words of nectar), and <em>Satsangi Jivan</em> (an authorized biography by Shatanand Muni). He was supported by five hundred sadhus (saints)—all liberated souls and Vedic scholars.</p>
+            
+            <hr class="ornate">
+            
+            <h3>Great Saints with Lord Swaminarayan</h3>
+            <ul class="vedic-list">
+                <li>Gunatitanand Swami</li>
+                <li>Gopalanand Swami</li>
+                <li>Muktananda Swami</li>
+                <li>Brahmanand Swami</li>
+                <li>Premananda Swami</li>
+                <li>Shukanda Swami</li>
+                <li>Shatanand Swami</li>
+                <li>Nityanand Swami</li>
+                <li>Bhumanand Swami</li>
+                <li>Atmanand Swami</li>
+                <li>Majukeshananda Swami</li>
+                <li>Devananda Swami</li>
+                <li>Akhandananda Swami</li>
+                <li>Adharananda Swami</li>
+                <li>Five hundred Nanda Santo <br><em>(Vedic scholars, writers, poets, and musicians)</em></li>
+            </ul>
+        </div>
+
+        <!-- PROPAGATING TRUE WISDOM -->
+        <div class="section-card">
+            <h2>Propagating True Wisdom</h2>
+            <p>In 1948, His Holiness Shastriji Maharaj Dharmajivandasji Swami established Swaminarayan Gurukul, Rajkot Sansthan, in Gujarat, India. As a pioneer within the Udhav Sampradaya, he utilized the Gurukul system to preach Vedic Dharma in its original form.</p>
+            
+            <hr class="ornate">
+
+            <h3>Sadgurus During Shastriji Maharaj's Time</h3>
+            <ul class="vedic-list">
+                <li>Purani Swami Premaprakash Dasji</li>
+                <li>Niranmukta Dasji Swami</li>
+                <li>Jogi Swami Hariprakash Dasji</li>
+                <li>Kothari Swami Harijivan Dasji</li>
+                <li>Hariprasad Dasji Swami</li>
+            </ul>
+
+            <hr class="ornate">
+
+            <h3>Sadgurus with Present Spiritual Master Devakrishna Dasji Swami</h3>
+            <ul class="vedic-list">
+                <li>Lakshminarayan Dasji Swami</li>
+                <li>Gyanswarup Dasji Swami</li>
+                <li>Ghanshyam Jivan Dasji Swami</li>
+                <li>Narayan Das Swami</li>
+                <li>Devaprasad Dasji Swami</li>
+                <li>Dharamavallabh Dasji Swami</li>
+                <li>Krishna Priya Das Swami</li>
+                <li>Santvallabh Dasji Swami</li>
+                <li>Tayagvallabh Dasji Swami</li>
+                <li>Govind Dasji Swami</li>
+                <li>Nirbhaya Dasji Swami</li>
+                <li>Nilkanth Dasji Swami</li>
+                <li>Hari Priya Dasji Swami</li>
+                <li>Shruti Prakash Dasji Swami</li>
+            </ul>
+        </div>
+
+        <!-- DEVOTEES & LEADERS -->
+        <div class="section-card">
+            <h2>Our Devotees & Leaders</h2>
+            
+            <h3>Vedic Scholar Leaders in the USA</h3>
+            <ul class="vedic-list">
+                <li>Devaprasad Dasji Swami <br><em>(Director/Promoter of Vedic Dharma in North America)</em></li>
+                <li>Krushna Swarupa Dasji Swami</li>
+                <li>Shanti Priya Dasji Swami</li>
+            </ul>
+
+            <hr class="ornate">
+
+            <h3>Householder Devotees & Leaders (Since Shastriji Maharaj)</h3>
+            <ul class="vedic-list">
+                <li>Mr. Dhirubhai Jerambhai Babaria (Dallas, TX)</li>
+                <li>Mr. Manubhai Haribhai Patolia (CA)</li>
+                <li>Mr. Chaturbhai Nagajibhai Vaghasia (NJ)</li>
+                <li>Mr. Gordhanbhai Lakshmanbhai Paghadal (NJ)</li>
+                <li>Dr. Chaturbhai Jerambhai Babaria (Phoenix, AZ)</li>
+            </ul>
+
+            <hr class="ornate">
+
+            <h3>Ladies Wing Devotees</h3>
+            <ul class="vedic-list">
+                <li>Mrs. Jayaben D. Babaria (Dallas, TX)</li>
+                <li>Mrs. Nirmalaben M. Patolia (CA)</li>
+                <li>Mrs. Vinaben C. Vaghasia (NJ)</li>
+                <li>Mrs. Rupalben C. Babaria (Phoenix, AZ)</li>
+            </ul>
+        </div>
+
+        <!-- SANTO DOMINGO -->
+        <div class="section-card">
+            <h2>Swaminarayan Gurukul Santo Domingo</h2>
+            <p>On January 27th, 1983, Shri Chaturbai Jerambhai Babaria established the International Swaminarayan Spiritual Center in Santo Domingo, DR, now known as Swaminarayan Gurukul Santo Domingo. His Holiness Shastriji Maharaj visited on August 13th, 1986, radiating divine light and transforming lives. Continuity has been maintained by Pujaya Jogi Swami Hariprakash Dasji, P Mahant Swami Devakrishna Dasji, P Devaprasad Dasji, and Devotee Dhirubhai J Babaria. Mireya Bobadilla (Ma Saraswati) notably translated the <em>Shikshapatri</em> and <em>Vachanamrutam</em> into Spanish.</p>
+
+            <hr class="ornate">
+            
+            <h3>Prominent Spanish-Speaking Devotees</h3>
+            <ul class="vedic-list">
+                <li>Ghanashyam Bhagat (Enrique Guzman)</li>
+                <li>Suresh Bhagat (Jorge Solono)</li>
+                <li>Lakshman Bhagat (John Philip Brown)</li>
+                <li>Yogesh Bhagat (Don Jose Reyneso)</li>
+                <li>Harikrishna Bhagat (Jose Gillian)</li>
+                <li>Mahesh Bhagat (Freddy Alcantara)</li>
+                <li>Dinesh Bhagat (Daniel Montoly)</li>
+                <li>Balmukunda Bhagat (Miguel Rivera)</li>
+                <li>Paresh Bhagat (Freddy Mateyo)</li>
+                <li>Mahadeva Bhagat</li>
+                <li>Vasudeva Bhagat</li>
+                <li>Ma Saraswati (Mireya Bobadilla)</li>
+                <li>Radha Devi (Gloria Guzman)</li>
+                <li>Ansuya Devi (Maria Martinez)</li>
+                <li>Paravati Devi (Demetri)</li>
+                <li>Radhika Devi (Liselle)</li>
+                <li>Laxmi Devi</li>
+            </ul>
+        </div>
+
+        <!-- MANDIR & MISSION -->
+        <div class="section-card">
+            <h2>Our Mandir & Mission</h2>
+            <p>The mandir is open to people of all ages and walks of life. Join us for our Satsang congregation (holy fellowship) every Saturday from 5:00 PM to 7:00 PM, followed by prasad (vegetarian dinner). <em>(Open for Satsang on Saturdays from 5:00 PM to 8:00 PM.)</em></p>
+
+            <hr class="ornate">
+
+            <h3>Our Mission</h3>
+            <ul class="mission-list">
+                <li>Instilling self-discipline, etiquette, humanity, cultural sensibility, and love of nature and the universe.</li>
+                <li>Developing harmony and peace with all religions through Vedic Dharma.</li>
+                <li>Developing the highest character through the teaching of Vedic Dharma.</li>
+                <li>Providing Vedic education to anyone interested.</li>
+                <li>Promoting a happy and healthy life through Yoga, music, and Ayurveda (the teaching of Bhagwan Dhanvantari).</li>
+                <li>Teaching Bhakti Yoga for self-realization.</li>
+            </ul>
+            
+            <div class="contact-info">
+                <strong>Arizona Vedic Cultural Center Of Swaminarayan Gurukul USA</strong>
+                1150 W Superstition Blvd.<br>
+                Apache Junction, AZ 85120<br>
+                (480) 888-8743
+            </div>
+        </div>
+
+        <!-- CHANTS -->
+        <div class="chants">
+            Jai Swaminarayan <span class="chant-divider">❖</span> Jai Shri Krishna <span class="chant-divider">❖</span> Jai Shri Ramachandra<br>
+            Jai Shri Lord Shiva <span class="chant-divider">❖</span> Jai Shri Lord Ganesha <span class="chant-divider">❖</span> Jai Shri Hanumanji
+        </div>
+
+        <!-- ARCHIVE GRID -->
+        <div class="section-card archive-section">
+            <h2>Satsang Teachings & Event Archive</h2>
+            <hr class="ornate">
+            
+            <div class="archive-grid">
+                <a href="https://azvedicgurukul.wordpress.com/2024/08/18/videos-august-24-2024/" class="archive-card">
+                    <h4>Aug 24, 2024</h4>
+                    <p>Satsang: Shravan Mas & Sri Krishna Jayanti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/08/14/videos-august-17th-2024/" class="archive-card">
+                    <h4>Aug 17, 2024</h4>
+                    <p>Satsang: 15th Dhun Sabha</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/08/05/videos-august-10th-2024/" class="archive-card">
+                    <h4>Aug 10, 2024</h4>
+                    <p>Satsang: 14th Dhun Sabha</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/08/04/devika-performs-bharatanatyam-dallas-gurukul-brahmasatra-8-3-24/" class="archive-card">
+                    <h4>Aug 3, 2024</h4>
+                    <p>Devika Performs Bharatanatyam (Dallas Gurukul)</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/07/30/videos-august-3-2024/" class="archive-card">
+                    <h4>Aug 3, 2024</h4>
+                    <p>Satsang: 13th Dhun Sabha (Notice: No Satsang)</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/07/24/videos-july-27th-2024/" class="archive-card">
+                    <h4>Jul 27, 2024</h4>
+                    <p>Satsang: 12th Dhun Sabha for Murti Prathistha</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/07/15/videos-july-21st-2024/" class="archive-card">
+                    <h4>Jul 21, 2024</h4>
+                    <p>Satsang: 11th Dhun Sabha at Babaria Residence</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/07/08/videos-july-13th-2024/" class="archive-card">
+                    <h4>Jul 13, 2024</h4>
+                    <p>Satsang: 10th Dhun Sabha</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/07/01/videos-july-7th-2024/" class="archive-card">
+                    <h4>Jul 7, 2024</h4>
+                    <p>Satsang: Rath Yatra & Pragatya Day Celebration</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/06/24/videos-june-29th-2024/" class="archive-card">
+                    <h4>Jun 29, 2024</h4>
+                    <p>Satsang: 8th Dhun Sabha</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/06/18/videos-june-22nd-2024/" class="archive-card">
+                    <h4>Jun 22, 2024</h4>
+                    <p>Satsang: 7th Dhun Sabha</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/06/18/om-domadia-in-bengaluru-gurukul/" class="archive-card">
+                    <h4>Jun 18, 2024</h4>
+                    <p>Journey to Bengaluru Gurukul: Om Domadia</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/06/15/the-sixth-dhun-sabha-for-murti-pratishtha-june-14-2024/" class="archive-card">
+                    <h4>Jun 14, 2024</h4>
+                    <p>6th Dhun Sabha for Murti-Pratishtha</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/06/12/no-satsang-this-saturday-june-15th-2024/" class="archive-card">
+                    <h4>Jun 12, 2024</h4>
+                    <p>Notice: No Satsang on June 15</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/06/06/gurukul-construction-ceremony-january-14th-2011/" class="archive-card">
+                    <h4>Jun 6, 2024</h4>
+                    <p>Historical: Gurukul Initiation Ceremony (2011)</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/06/04/videos-june-8th-2024/" class="archive-card">
+                    <h4>Jun 8, 2024</h4>
+                    <p>Satsang: 5th Dhun Bhakti Manila Mandal</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/05/30/the-bhagavad-gita-a-summary-of-chapters-1-through-18/" class="archive-card">
+                    <h4>May 30, 2024</h4>
+                    <p>The Bhagavad Gita: Summary of Chapters 1–18</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/05/27/videos-june-1st-2024/" class="archive-card">
+                    <h4>Jun 1, 2024</h4>
+                    <p>Satsang: Maharaj Antardhyan Day & 4th Dhun</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/05/16/videos-may-18th-2024/" class="archive-card">
+                    <h4>May 18, 2024</h4>
+                    <p>Satsang: Murti Pratishtha Mahotsav Preview</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/05/14/videos-may-25th-2024/" class="archive-card">
+                    <h4>May 25, 2024</h4>
+                    <p>Satsang: Nrusinh & Buddha Jayanti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/05/11/the-first-ladies-dhun-sabha/" class="archive-card">
+                    <h4>May 11, 2024</h4>
+                    <p>The First Ladies’ Dhun Sabha</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/05/06/videos-may-11th-2024/" class="archive-card">
+                    <h4>May 11, 2024</h4>
+                    <p>Satsang: Parshuram Jayanti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/05/02/dhirubhai-babaria-visits-shantigram-in-amdavad-gurukul/" class="archive-card">
+                    <h4>May 2, 2024</h4>
+                    <p>Dhirubhai Babaria Visits Amdavad Gurukul</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/29/videos-may-4th-2024/" class="archive-card">
+                    <h4>May 4, 2024</h4>
+                    <p>Satsang: Ekadashi & Vallabachrarya Jayanti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/21/anantbhai-malavia-left-this-world-for-akshardham-today/" class="archive-card">
+                    <h4>Apr 21, 2024</h4>
+                    <p>In Memoriam: Bhaktraj Anantbhai Malavia</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/20/videos-april-27th-2024/" class="archive-card">
+                    <h4>Apr 27, 2024</h4>
+                    <p>Satsang: Lord Rama, Swaminarayan & Hanuman Jayanti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/20/shri-krishna-sharanam-mamah-%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80-%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3-%E0%A4%B6%E0%A4%B0%E0%A4%A3%E0%A4%AE-%E0%A4%AE%E0%A4%AE-108x-take-shelter-in-lord-krish/" class="archive-card">
+                    <h4>Apr 20, 2024</h4>
+                    <p>Chant 108x: Shri Krishna Sharanam Mamah</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/18/his-holiness-blessing-sadhus-and-parishads/" class="archive-card">
+                    <h4>Apr 18, 2024</h4>
+                    <p>His Holiness Blesses Sadhus & Bhaktraj Ramji Dada</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/17/videos-april-20th-2024/" class="archive-card">
+                    <h4>Apr 20, 2024</h4>
+                    <p>Satsang: Lord Rama & Swaminarayan Pre-festival</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/12/iraivan-temple-kauai-island-hawaii-usa/" class="archive-card">
+                    <h4>Apr 12, 2024</h4>
+                    <p>Iraivan Temple Visit (Hawaii)</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/12/the-first-murthi-pratishta-anniversary-puja-for-iraivan-temple/" class="archive-card">
+                    <h4>Apr 12, 2024</h4>
+                    <p>1st Anniversary Puja: Iraivan Temple</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/08/videos-april-13th-2024/" class="archive-card">
+                    <h4>Apr 13, 2024</h4>
+                    <p>Satsang: Matsaya Jayanti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/07/the-eswaran-family-and-their-great-spiritual-journey-with-lord-swaminarayan/" class="archive-card">
+                    <h4>Apr 7, 2024</h4>
+                    <p>The Eswaran Family’s Spiritual Journey</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/04/02/videos-april-6th-2024/" class="archive-card">
+                    <h4>Apr 6, 2024</h4>
+                    <p>Satsang Celebration</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/03/26/videos-march-30th-2024/" class="archive-card">
+                    <h4>Mar 30, 2024</h4>
+                    <p>Satsang: Remembering Lacinio Pichardo Jr.</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/03/17/videos-march-23rd-2024/" class="archive-card">
+                    <h4>Mar 23, 2024</h4>
+                    <p>Satsang: Holi & Dhuleti Celebrations</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/03/12/videos-march-16th-2024/" class="archive-card">
+                    <h4>Mar 16, 2024</h4>
+                    <p>Satsang: Narnarayan Deva Patotsav</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/03/07/our-heartfelt-condolences-to-ramilaben-liladharbhai-liliben-faljibhai-indira-and-riyan/" class="archive-card">
+                    <h4>Mar 7, 2024</h4>
+                    <p>Condolences to the Liladharbhai Family</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/03/03/videos-march-9th-2024/" class="archive-card">
+                    <h4>Mar 9, 2024</h4>
+                    <p>Satsang: Shivratri & Prayers</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/03/01/mahashivarathri-saturday-march-2nd-2024/" class="archive-card">
+                    <h4>Mar 2, 2024</h4>
+                    <p>Mahashivarathri Celebration with KHA</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/02/22/morning-sadhus-shibir-evening-satsang/" class="archive-card">
+                    <h4>Feb 22, 2024</h4>
+                    <p>Morning Sadhus Shibir & Evening Satsang</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/02/20/videos-february-24th-2024/" class="archive-card">
+                    <h4>Feb 24, 2024</h4>
+                    <p>Satsang: Vishwakarma Jayanti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/02/14/videos-february-17th-2024/" class="archive-card">
+                    <h4>Feb 17, 2024</h4>
+                    <p>Satsang: Vasant Panchami</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/02/05/videos-february-10th-2024/" class="archive-card">
+                    <h4>Feb 10, 2024</h4>
+                    <p>Satsang: Shastriji Maharaj Tithi</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/01/29/videos-february-3rd-2024/" class="archive-card">
+                    <h4>Feb 3, 2024</h4>
+                    <p>Satsang: Shastriji Maharaj Antrandhyan Tithi</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/01/23/videos-january-27th-2024/" class="archive-card">
+                    <h4>Jan 27, 2024</h4>
+                    <p>Satsang: Indian Republic Day</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/01/15/videos-january-20th-2023/" class="archive-card">
+                    <h4>Jan 20, 2024</h4>
+                    <p>Satsang: Mukatanada Swami Pragatya Din</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/01/12/devarajia-video-by-dhirubhai-and-ashwin-babaria-january-11th-2024/" class="archive-card">
+                    <h4>Jan 12, 2024</h4>
+                    <p>Devarajia Temple Video Tour</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/01/08/videos-january-13th-2023/" class="archive-card">
+                    <h4>Jan 13, 2024</h4>
+                    <p>Satsang: Makar Sankranti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/01/02/videos-january-6th-2023/" class="archive-card">
+                    <h4>Jan 6, 2024</h4>
+                    <p>Satsang: In Memory of Our Parents</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2024/01/01/a-cherished-memory-of-latin-american-devotees-with-his-holiness-shastriji-maharaj/" class="archive-card">
+                    <h4>Jan 1, 2024</h4>
+                    <p>Cherished Memories: Latin American Devotees (1987)</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/12/25/videos-december-30th-2023/" class="archive-card">
+                    <h4>Dec 30, 2023</h4>
+                    <p>Satsang: Dattatreya Jayanti & New Year</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/12/17/videos-december-23rd-2023/" class="archive-card">
+                    <h4>Dec 23, 2023</h4>
+                    <p>Satsang: Gita Jayanti & Christmas</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/12/11/videos-december-16th-2023/" class="archive-card">
+                    <h4>Dec 16, 2023</h4>
+                    <p>Satsang: 204th Vachanamrut Jayanti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/12/05/videos-december-9th-2023/" class="archive-card">
+                    <h4>Dec 9, 2023</h4>
+                    <p>Satsang: 16th Punya Tithi of P. Hari Prasad Dasji Swami</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/11/30/the-glorious-light-of-the-supreme-lord/" class="archive-card">
+                    <h4>Nov 30, 2023</h4>
+                    <p>Purushotam Prakash: Glorious Light of the Supreme Lord</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/11/27/videos-december-2nd-2023/" class="archive-card">
+                    <h4>Dec 2, 2023</h4>
+                    <p>Satsang: Deva Diwali</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/11/19/videos-november-25th-2023/" class="archive-card">
+                    <h4>Nov 25, 2023</h4>
+                    <p>Satsang: Tulsi Vivah & Chaturmas Ending</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/11/14/there-will-be-no-satsang-on-november-18th-2023/" class="archive-card">
+                    <h4>Nov 14, 2023</h4>
+                    <p>Notice: No Satsang on November 18</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/11/04/videos-november-11th-and-12th-2023/" class="archive-card">
+                    <h4>Nov 11, 2023</h4>
+                    <p>Satsang: Diwali & New Year VS 2080</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/11/03/asia-today-newspaper-article-november-2023/" class="archive-card">
+                    <h4>Nov 3, 2023</h4>
+                    <p>Asia Today Feature: Saints Visit Vedic Center</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/10/31/videos-videos-november-4th-2023/" class="archive-card">
+                    <h4>Nov 4, 2023</h4>
+                    <p>Satsang: Hanumanji Patotsav</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/10/22/videos-october-28th-2023/" class="archive-card">
+                    <h4>Oct 28, 2023</h4>
+                    <p>Satsang: Navaratri & Sharad Purnima Garba</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/10/16/videos-october-21st-2023/" class="archive-card">
+                    <h4>Oct 21, 2023</h4>
+                    <p>Satsang: Navaratri Garba Celebration</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/10/10/videos-october-14th-2023/" class="archive-card">
+                    <h4>Oct 14, 2023</h4>
+                    <p>Satsang: Mahant Swami Shri Deva Prasad Dasji Visit</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/10/08/padhramani-week/" class="archive-card">
+                    <h4>Oct 8, 2023</h4>
+                    <p>Padhramani Week: Saints Visit Dr. Babaria</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/10/02/videos-october-7th-2023/" class="archive-card">
+                    <h4>Oct 7, 2023</h4>
+                    <p>Satsang: Mahatma Gandhi Jayanti</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/09/26/devotee-photos-september-26th-2023/" class="archive-card">
+                    <h4>Sep 26, 2023</h4>
+                    <p>Archival Photos: Devotees & Traditions</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/09/25/videos-september-30th-2023/" class="archive-card">
+                    <h4>Sep 30, 2023</h4>
+                    <p>Satsang: Lakshminarayan Dasji Swami Punyatithi</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/09/17/videos-sept-23rd-2023/" class="archive-card">
+                    <h4>Sep 23, 2023</h4>
+                    <p>Satsang: Ganesh Chaturthi</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/09/11/videos-september-16th-2023/" class="archive-card">
+                    <h4>Sep 16, 2023</h4>
+                    <p>Satsang: Kothari Swami Disappearance Day</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/09/10/santo-domingo-abhishek-ceremony-september-9th-2023/" class="archive-card">
+                    <h4>Sep 10, 2023</h4>
+                    <p>Santo Domingo Abhishek Ceremony</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/09/07/devotees-from-surat-india-visit-dr-babaria/" class="archive-card">
+                    <h4>Sep 7, 2023</h4>
+                    <p>Surat Devotees Visit Dr. Babaria</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/09/03/videos-september-9th-2023/" class="archive-card">
+                    <h4>Sep 9, 2023</h4>
+                    <p>Satsang: Janmashtami (Krishna Appearance Day)</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/08/28/videos-september-2nd-2023/" class="archive-card">
+                    <h4>Sep 2, 2023</h4>
+                    <p>Satsang: Rakshabandhan</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/08/23/letter-from-dinesh-bhagat/" class="archive-card">
+                    <h4>Aug 23, 2023</h4>
+                    <p>A Letter from Dinesh Bhagat</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/08/21/videos-august-26th-2023/" class="archive-card">
+                    <h4>Aug 26, 2023</h4>
+                    <p>Satsang: Abhishek in Rajkot Gurukul Temple</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/08/15/videos-august-19th-2023/" class="archive-card">
+                    <h4>Aug 19, 2023</h4>
+                    <p>Satsang: Murti Prathistha (Santo Domingo & Cali)</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/08/14/murti-pratishtha-ceremony-colombia/" class="archive-card">
+                    <h4>Aug 14, 2023</h4>
+                    <p>Murti Pratishtha Ceremony: Cali, Colombia</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/08/13/murti-pratishtha-ceremony/" class="archive-card">
+                    <h4>Aug 13, 2023</h4>
+                    <p>Murti Pratishtha Ceremony: Santo Domingo</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/08/12/television-interview-on-the-julito-hazim-program-08-12-2023/" class="archive-card">
+                    <h4>Aug 12, 2023</h4>
+                    <p>Television Interview: Julito Hazim Program</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/08/07/videos-august-12th-2023/" class="archive-card">
+                    <h4>Aug 12, 2023</h4>
+                    <p>Satsang: Ekadashi of Shravan Maas</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/08/04/uddhava-bhagat-kirtan-aarti-before-the-murtis/" class="archive-card">
+                    <h4>Aug 4, 2023</h4>
+                    <p>Uddhava Bhagat: Kirtan & Aarti Before The Murtis</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/31/videos-august-5th-2023/" class="archive-card">
+                    <h4>Aug 5, 2023</h4>
+                    <p>Satsang: Presence of Shri Manu Bhagat</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/28/kashiben-bhimajibhai-talavia-aksharwas/" class="archive-card">
+                    <h4>Jul 28, 2023</h4>
+                    <p>In Memoriam: Kashiben Bhimajibhai Talavia</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/25/pujya-mahant-swami-devaprasad-dasji-swami-arrives-in-dallas-tx-for-brahmsatra/" class="archive-card">
+                    <h4>Jul 25, 2023</h4>
+                    <p>Mahant Swami Arrives in Dallas for Brahmsatra</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/25/premanand-das-bhagat-reading-of-loya-10/" class="archive-card">
+                    <h4>Jul 25, 2023</h4>
+                    <p>Premanand Das Bhagat: Reading of Loya 10</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/24/videos-july-29th-2023/" class="archive-card">
+                    <h4>Jul 29, 2023</h4>
+                    <p>Satsang: Ekadashi Celebration</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/23/krishna-babarias-white-coat-ceremony/" class="archive-card">
+                    <h4>Jul 23, 2023</h4>
+                    <p>Krishna Babaria’s White Coat Ceremony</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/21/colombia-vedic-center-courtesy-of-devotee-uddhava-bhagat/" class="archive-card">
+                    <h4>Jul 21, 2023</h4>
+                    <p>Colombia Vedic Center Tour (Uddhava Bhagat)</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/18/videos-july-22nd-2023/" class="archive-card">
+                    <h4>Jul 22, 2023</h4>
+                    <p>Satsang: Shravan Maas Celebration</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/10/videos-july-15th-2023/" class="archive-card">
+                    <h4>Jul 15, 2023</h4>
+                    <p>Satsang Video Archive</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/09/photos-dr-chaturbhai-j-babaria/" class="archive-card">
+                    <h4>Jul 9, 2023</h4>
+                    <p>Photo Gallery: Dr. Chaturbhai J. Babaria</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/08/kirtan-bhakti/" class="archive-card">
+                    <h4>Jul 8, 2023</h4>
+                    <p>Kirtan Bhakti: Sadguru Shri Premananda Swami</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/05/lessons-in-gyan-knowledge-of-gods-greatness/" class="archive-card">
+                    <h4>Jul 5, 2023</h4>
+                    <p>Lessons in Gyan: Knowledge of God’s Greatness</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/07/03/videos-july-8th-2023/" class="archive-card">
+                    <h4>Jul 8, 2023</h4>
+                    <p>Satsang Video Archive</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/27/manubhagat-sings-hari-vina-hitkari-biju-koi-taru-nathi/" class="archive-card">
+                    <h4>Jun 27, 2023</h4>
+                    <p>Manubhagat Sings: Hari Vinā Hitkārī Bīju Koī</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/26/videos-july-1st-2023/" class="archive-card">
+                    <h4>Jul 1, 2023</h4>
+                    <p>Satsang Video Archive</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/26/mantra-kirtans-by-dr-chaturbhai-j-babaria/" class="archive-card">
+                    <h4>Jun 26, 2023</h4>
+                    <p>Mantra & Kirtans by Dr. Chaturbhai J. Babaria</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/23/babaria-family-pictures-and-videos/" class="archive-card">
+                    <h4>Jun 23, 2023</h4>
+                    <p>Babaria Family Pictures and Videos</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/19/dr-chaturbhai-j-babarias-history-with-the-swaminarayan-sampradaya/" class="archive-card">
+                    <h4>Jun 19, 2023</h4>
+                    <p>Dr. Babaria’s History With The Sampradaya</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/18/videos-june-24th-2023/" class="archive-card">
+                    <h4>Jun 24, 2023</h4>
+                    <p>Satsang: Rathyatra Celebration</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/13/videos-june-17th-2023/" class="archive-card">
+                    <h4>Jun 17, 2023</h4>
+                    <p>Satsang: Nilkanth Varni & Ramanad Swami Meeting</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/13/vachanamrut-vivechan-by-sadguru-shastriji-maharaj-shri-dharmajivandasji-swami-1985/" class="archive-card">
+                    <h4>Jun 13, 2023</h4>
+                    <p>Vachanamrut Vivechan (1985 Translation)</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/11/dr-arati-babaria-pandya-md-ms-graduation-june-10th-2023/" class="archive-card">
+                    <h4>Jun 11, 2023</h4>
+                    <p>Dr. Arati Babaria Pandya Graduation</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/06/08/videos-june-8th-2023/" class="archive-card">
+                    <h4>Jun 10, 2023</h4>
+                    <p>Satsang: World Environment Day</p>
+                </a>
+                <a href="https://azvedicgurukul.wordpress.com/2023/05/30/videos-june-3rd-2023/" class="archive-card">
+                    <h4>Jun 3, 2023</h4>
+                    <p>Satsang: Shriji Maharaj Disappearance Day</p>
+<a href="https://azvedicgurukul.wordpress.com/2023/05/23/videos-may-27th-2023/" class="archive-card">
+<h4>May 27, 2023</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/05/18/videos-may-18th-2023/" class="archive-card">
+<h4>May 18, 2023</h4>
+<p>Morning Aarti: Shastri Shri Mukundswarup Dasji & Shri Sahajswarup Dasji Swami</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/05/15/videos-may-20th-2023/" class="archive-card">
+<h4>May 20, 2023</h4>
+<p>Satsang & Shibir with Shastri Shri Mukundswarup Dasji & Shri Sahajswarup Dasji Swami</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/05/09/videos-may-13th-2023/" class="archive-card">
+<h4>May 13, 2023</h4>
+<p>Satsang: Junagadh Radharaman Dev Patotsav</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/05/05/blessings-and-current-events/" class="archive-card">
+<h4>May 5, 2023</h4>
+<p>Blessings and Current Events</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/05/02/videos-may-6th-2023/" class="archive-card">
+<h4>May 6, 2023</h4>
+<p>Satsang: Dholera Madan Mohan Deva Patotsav, Narasimha Jayanti, and Buddha Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/04/25/videos-april-29th-2023/" class="archive-card">
+<h4>Apr 29, 2023</h4>
+<p>Satsang: Bhuj Nar Narayan Dev Patotsav and Ramanujacharya Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/04/24/akshar-nivasi-great-donation-for-the-reconstruction-of-lord-shiva-temple/" class="archive-card">
+<h4>Apr 24, 2023</h4>
+<p>In Memory: Lord Shiva Temple Contribution by Babaria Family (Devarajia)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/04/23/photo-santo-domingo-devotees-appx-1984/" class="archive-card">
+<h4>Apr 23, 2023</h4>
+<p>Photo: Santo Domingo Devotees (approx. 1984)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/04/18/video-april-22nd-2023/" class="archive-card">
+<h4>Apr 22, 2023</h4>
+<p>Satsang: Parshuram Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/04/14/satsang-cancelled-april-15th-2023/" class="archive-card">
+<h4>Apr 15, 2023</h4>
+<p>Notice: Satsang Cancelled (Dr. Babaria's Absence)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/04/02/videos-april-8th-2023/" class="archive-card">
+<h4>Apr 8, 2023</h4>
+<p>Satsang: Rama Navami & Shri Hari Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/03/29/videos-april-1st-2023/" class="archive-card">
+<h4>Apr 1, 2023</h4>
+<p>Satsang: Shri Hari's Appearance Day, Rama Navami & Ekadashi</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/03/22/satsang-cancelled-march-25th-2023/" class="archive-card">
+<h4>Mar 25, 2023</h4>
+<p>Notice: Satsang Cancelled</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/03/15/videos-march-18th-2023/" class="archive-card">
+<h4>Mar 18, 2023</h4>
+<p>Satsang: Lord Narnarayan Jayanti, Acharya Raghuvir Maharaj's Appearance Day</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/03/07/videos-march-11th-2023/" class="archive-card">
+<h4>Mar 11, 2023</h4>
+<p>Notice: No Satsang</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/03/02/videos-march-4th-2023-holika-dhuleti/" class="archive-card">
+<h4>Mar 4, 2023</h4>
+<p>Satsang: Holika & Dhuleti (Holi)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/02/27/ananda-bhagat/" class="archive-card">
+<h4>Feb 27, 2023</h4>
+<p>Ananda Bhagat: Short Biography</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/02/22/new-devotee-premanand-das-bhagat/" class="archive-card">
+<h4>Feb 22, 2023</h4>
+<p>New Devotee: Premanand Das Bhagat</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/02/17/srila-prabhupadas-contributions-to-spreading-sanatana-dharma-worldwide/" class="archive-card">
+<h4>Feb 17, 2023</h4>
+<p>Srila Prabhupada's Contributions to Sanatana Dharma</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/02/14/videos-feb-25th-2023-mahashivaratri/" class="archive-card">
+<h4>Feb 25, 2023</h4>
+<p>Maha Shivaratri Rudra Yagna & Shikshapatri Inauguration</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/02/13/videos-feb-18th-2023/" class="archive-card">
+<h4>Feb 18, 2023</h4>
+<p>Shivaratri Pujan</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/02/09/videos-the-benefits-of-a-vegetarian-diet/" class="archive-card">
+<h4>Feb 9, 2023</h4>
+<p>The Benefits of a Vegetarian Diet</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/02/08/videos-feb-11th-2023/" class="archive-card">
+<h4>Feb 11, 2023</h4>
+<p>Satsang: His Holiness Shastriji Maharaj's 35th Disappearance Day</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/02/03/mahamuni-sadguru-shri-muktanand-swami-purani-shri-premprakashdasji-swami/" class="archive-card">
+<h4>Feb 3, 2023</h4>
+<p>Nand Saints & Brahmnishtha Santo</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/01/30/videos-feb-5th-2023/" class="archive-card">
+<h4>Feb 5, 2023</h4>
+<p>Satsang: Shakotsav & 35th Disappearance Day of Shastriji Maharaj</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/01/29/shikshapatri/" class="archive-card">
+<h4>Jan 29, 2023</h4>
+<p>Shikshapatri</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/01/25/videos-jan-28th-2023/" class="archive-card">
+<h4>Jan 28, 2023</h4>
+<p>Satsang: Vasant Panchami, 197th Shikshapatri Jayanti, Multiple Jayantis</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/01/17/videos-jan-21st-2023/" class="archive-card">
+<h4>Jan 21, 2023</h4>
+<p>Satsang with Shri Keshubhai H. Patolia</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/01/13/videos-jan-14th-2023/" class="archive-card">
+<h4>Jan 14, 2023</h4>
+<p>Satsang: Makar Sankranti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2023/01/04/videos-jan-7th-2023/" class="archive-card">
+<h4>Jan 7, 2023</h4>
+<p>Satsang: New Year 2023</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/12/30/videos-shrimad-bhagavatam-katha-dec-30th-2022/" class="archive-card">
+<h4>Dec 30, 2022</h4>
+<p>Shrimad Bhagavatam Katha</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/12/26/amrut-mahotsav-hilights/" class="archive-card">
+<h4>Dec 25, 2022</h4>
+<p>Amrut Mahotsav Highlights</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/12/21/no-satsang-12-24-2022/" class="archive-card">
+<h4>Dec 24, 2022</h4>
+<p>Notice: No Satsang</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/12/13/videos-dec-17th-2022/" class="archive-card">
+<h4>Dec 17, 2022</h4>
+<p>Satsang: Dhanurmas, Muktananda Swami Pragatay Day & Christmas</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/12/01/videos-dec-3rd-2022/" class="archive-card">
+<h4>Dec 3, 2022</h4>
+<p>Notice: No Satsang (Amrit Mahotsav Preparation)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/11/24/videos-gurukul-highlights-from-dec-2015-to-jan-2018/" class="archive-card">
+<h4>Nov 24, 2022</h4>
+<p>Gurukul Highlights: Dec 2015 to Jan 2018</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/11/22/videos-nov-26th-2022/" class="archive-card">
+<h4>Nov 26, 2022</h4>
+<p>Satsang: Thanksgiving & 15th Pujaya Tithi of Hariprasad Dasji Swami</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/11/16/videos-nov-19th-2022/" class="archive-card">
+<h4>Nov 19, 2022</h4>
+<p>Satsang: 15th Pujaya Tithi of Hariprasad Dasji Swami</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/11/13/videos-nov-18th-2021/" class="archive-card">
+<h4>Nov 18, 2021</h4>
+<p>Remembering Leelas of Bhagavan by Shastri Shri Mukundswarupdasji</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/11/09/videos-nov-12th-2022/" class="archive-card">
+<h4>Nov 12, 2022</h4>
+<p>Satsang: Deva Diwali</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/11/09/dr-chaturbhai-j-babaria-reads-vachanamrut-gadhada-ii-56-with-santos-in-his-home-july-29th-2006/" class="archive-card">
+<h4>Nov 9, 2022</h4>
+<p>Dr. Babaria Reads Vachanamrut Gadhadā II-56 (July 29th, 2006)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/11/09/dr-babaria-explains-the-establishment-of-santo-domingo-gurukul-sept-25th-2018/" class="archive-card">
+<h4>Nov 9, 2022</h4>
+<p>Dr. Babaria Explains Establishment of Santo Domingo Gurukul (Sept 25th, 2018)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/11/07/jogi-swami-1989/" class="archive-card">
+<h4>Nov 7, 2022</h4>
+<p>His Holiness Shri Jogi Swami Haripriyadasji (1989)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/11/07/shastriji-maharaj-dharmajivandasji-swami-may-1987/" class="archive-card">
+<h4>Nov 7, 2022</h4>
+<p>Shastriji Maharaj Dharmajivandasji Swami (May 1987)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/10/31/videos-nov-5th-2022/" class="archive-card">
+<h4>Nov 5, 2022</h4>
+<p>Satsang: New Samvat Year 2079, Vadtal Lakshminarayan Deva Patotsav, Sardar Patel Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/10/26/videos-oct-29th-2022/" class="archive-card">
+<h4>Oct 29, 2022</h4>
+<p>Satsang: Vikram Samvat New Year 2079, Labh Pancham, Sardar Patel Janma Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/10/18/videos-oct-22nd-2022/" class="archive-card">
+<h4>Oct 22, 2022</h4>
+<p>Satsang: Hanumanji Maharaj Pujan, Lakshmi Pujan & Diwali Utsav</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/10/08/vedic-creation-theory/" class="archive-card">
+<h4>Oct 8, 2022</h4>
+<p>Vedic Creation Chart</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/10/02/videos-oct-15th-2022/" class="archive-card">
+<h4>Oct 15, 2022</h4>
+<p>Satsang: Hanumanaji Maharaj Patotasav Sarangpur & Diwali Ankot Utasav</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/10/02/videos-oct-8th-2022/" class="archive-card">
+<h4>Oct 8, 2022</h4>
+<p>Satsang: Dussehra (Vijayadashami), Gopinathaji Maharaj Patotasav, Sharadpurnima</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/10/01/arizona-hindu-heritage-month-commendation/" class="archive-card">
+<h4>Oct 1, 2022</h4>
+<p>Arizona Hindu Heritage Month Commendation (October 2022)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/09/27/vidoes-oct-1st-2022/" class="archive-card">
+<h4>Oct 1, 2022</h4>
+<p>Satsang: Navratri Pujan & Mahatma Gandhi Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/09/21/videos-sept-24th-2022/" class="archive-card">
+<h4>Sep 24, 2022</h4>
+<p>Satsang: Shriji Maharaj Shradh & Serva Pitru Shradh</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/09/20/blessings-in-2018/" class="archive-card">
+<h4>Sep 20, 2022</h4>
+<p>Blessings in 2018: Dr. Babaria with Pujaya Mahant Swami Devakrishna Dasji</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/09/15/videos-sept-17th-2022/" class="archive-card">
+<h4>Sep 17, 2022</h4>
+<p>Notice: No Satsang (Dr. Babaria Recovery)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/09/06/two-very-special-kirtans/" class="archive-card">
+<h4>Sep 6, 2022</h4>
+<p>Two Very Special Kirtans by Anantbhai Malavia</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/09/05/videos-sept-10th-2022/" class="archive-card">
+<h4>Sep 10, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/09/04/shree-laxminarayandasji-swami/" class="archive-card">
+<h4>Sep 4, 2022</h4>
+<p>Shree Laxminarayandasji Swami</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/08/31/september-3rd-2022/" class="archive-card">
+<h4>Sep 3, 2022</h4>
+<p>Notice: No Satsang This Weekend</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/08/22/videos-aug-27th-2022/" class="archive-card">
+<h4>Aug 27, 2022</h4>
+<p>Satsang: Disappearance Days of Jogi Swami & Kothari Swami</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/08/14/videos-aug-20th-2022/" class="archive-card">
+<h4>Aug 20, 2022</h4>
+<p>Satsang: Lord Krishna Pragatya Day</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/08/10/videos-aug-13th-2022/" class="archive-card">
+<h4>Aug 13, 2022</h4>
+<p>Satsang: Raksha Bandhan</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/08/02/videos-aug-6th-2022/" class="archive-card">
+<h4>Aug 6, 2022</h4>
+<p>Satsang: Shravan Mas</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/07/26/videos-july-30th-2022/" class="archive-card">
+<h4>Jul 30, 2022</h4>
+<p>Satsang: Lord Shiva Pujan</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/07/19/videos-july-23rd-2022/" class="archive-card">
+<h4>Jul 23, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/07/11/videos-july-16th-2022/" class="archive-card">
+<h4>Jul 16, 2022</h4>
+<p>Satsang: Gurupurnima (Vyas Puja) & Rath Yatra</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/07/05/videos-july-9th-2022/" class="archive-card">
+<h4>Jul 9, 2022</h4>
+<p>Satsang: Premaprakash Dasji & Niranmukat Dasji Disappearance Days</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/06/28/videos-july-2nd-2022/" class="archive-card">
+<h4>Jul 2, 2022</h4>
+<p>Satsang: 121st Appearance Day of Shastriji Maharaj</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/06/21/videos-june-25th-2022/" class="archive-card">
+<h4>Jun 25, 2022</h4>
+<p>Satsang: First Divine Meeting of Nilkanth Varni & Ramananda Swami</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/06/14/videos-june-18th-2022/" class="archive-card">
+<h4>Jun 18, 2022</h4>
+<p>Satsang: Nilkanth Varni & Ramananda Swami Meeting (June 18th, 1800)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/06/07/videos-june-11th-2022/" class="archive-card">
+<h4>Jun 11, 2022</h4>
+<p>Satsang: Bhim Ekadashi</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/06/01/videos-annakut-festival-2022/" class="archive-card">
+<h4>Jun 1, 2022</h4>
+<p>Annakut Festival 2022</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/05/30/videos-june-4th-2022/" class="archive-card">
+<h4>Jun 4, 2022</h4>
+<p>Satsang: Disappearance Day of Lord Swaminarayan</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/05/29/videos-hari-vishnu-yagna-1987/" class="archive-card">
+<h4>May 29, 2022</h4>
+<p>Hari Vishnu Yagna (1987)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/05/28/videos-may-28th-2022/" class="archive-card">
+<h4>May 28, 2022</h4>
+<p>50th Marriage Anniversary: Bhavanaben & Dinkarbhai Patel</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/05/15/videos-may-14th-2022/" class="archive-card">
+<h4>May 14, 2022</h4>
+<p>International Swaminarayan Spiritual Center – Colombia Satsang</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/05/11/videos-may-21st-2022/" class="archive-card">
+<h4>May 21, 2022</h4>
+<p>Satsang: Radharaman Devo Patotasav & Budha Purnima</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/05/10/dominican-republic-visit/" class="archive-card">
+<h4>May 10, 2022</h4>
+<p>Dominican Republic Visit</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/05/10/archive-footage/" class="archive-card">
+<h4>May 10, 2022</h4>
+<p>Dr. Babaria Explains Shri Devprasad Swami's Discourse on Karma Yoga</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/05/04/videos-may-7th-2022/" class="archive-card">
+<h4>May 7, 2022</h4>
+<p>Satsang: Parshuram Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/04/27/videos-apr-30th-2022/" class="archive-card">
+<h4>Apr 30, 2022</h4>
+<p>Satsang: Vallabhacharya Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/04/20/videos-apr-23rd-2022/" class="archive-card">
+<h4>Apr 23, 2022</h4>
+<p>Satsang with Shastri Shri Mukundswarup Dasji & Shri Dharamcharan Dasji</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/04/11/videos-apr-16th-2022/" class="archive-card">
+<h4>Apr 16, 2022</h4>
+<p>Satsang: Shri Ram Navami / Swaminarayan Pragatya Day & Hanuman Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/04/06/videos-apr-9th-2022/" class="archive-card">
+<h4>Apr 9, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/04/02/videos-apr-2nd-2022/" class="archive-card">
+<h4>Apr 2, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/03/30/videos-mar-26th-2022/" class="archive-card">
+<h4>Mar 26, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/03/20/vedanta-class-march-20th-2022/" class="archive-card">
+<h4>Mar 20, 2022</h4>
+<p>Vedanta Class with His Holiness Swami Shri Makundswarup Dasji</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/03/15/videos-march-19th-2022/" class="archive-card">
+<h4>Mar 19, 2022</h4>
+<p>Satsang: Holi, Shakotsav & Nar Narayan Dev Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/03/11/vedanta-class-mar-17th-2022/" class="archive-card">
+<h4>Mar 17, 2022</h4>
+<p>Vedanta Class Media</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/03/10/videos-mar-12th-2022/" class="archive-card">
+<h4>Mar 12, 2022</h4>
+<p>Devotee Birthday: Dhirubhai J. Babaria</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/03/01/videos-mar-5th-2022/" class="archive-card">
+<h4>Mar 5, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/02/25/videos-feb-26th-2022/" class="archive-card">
+<h4>Feb 26, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/02/18/videos-february-19th-2022/" class="archive-card">
+<h4>Feb 19, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/02/11/videos-feb-12th-2022/" class="archive-card">
+<h4>Feb 12, 2022</h4>
+<p>Satsang Video Archive (Krishna C. Babaria Birthday)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/02/05/videos-feb-5th-2022/" class="archive-card">
+<h4>Feb 5, 2022</h4>
+<p>Satsang: 196th Shikashapatri Jayanti, Vasant Panchami, Shastriji Maharaj Disappearance Day</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/01/28/videos-jan-29th-2022-2/" class="archive-card">
+<h4>Jan 29, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/01/19/videos-jan-22nd-2022/" class="archive-card">
+<h4>Jan 22, 2022</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/01/12/videos-jan-15th-2022/" class="archive-card">
+<h4>Jan 15, 2022</h4>
+<p>Makar Sankranti Celebration</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2022/01/04/videos-jan-8th-2022/" class="archive-card">
+<h4>Jan 8, 2022</h4>
+<p>Satsang: Muktananda Swami's Appearance Day</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/12/29/videos-jan-1st-2022/" class="archive-card">
+<h4>Jan 1, 2022</h4>
+<p>Lord Swaminarayan Mahamantra 220th Appearance Day</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/12/22/videos-dec-25th-2021/" class="archive-card">
+<h4>Dec 25, 2021</h4>
+<p>Christmas Day Celebration</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/12/19/governor-of-gujarat-state-speaking-about-shastriji-maharaj-dharamjivan-dasji-ex-student-of-rakeshbhai-dudhat/" class="archive-card">
+<h4>Dec 19, 2021</h4>
+<p>Governor of Gujarat Speaking About Shastriji Maharaj</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/12/17/vedanta-class-dec-16th-2021/" class="archive-card">
+<h4>Dec 16, 2021</h4>
+<p>Vedanta Class: Vachanãmrut Gadhadã I-7</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/12/15/videos-dec-18th-2021/" class="archive-card">
+<h4>Dec 18, 2021</h4>
+<p>Satsang: Vachanamrut 202 Jayanti, Geeta Jayanti & Datatreya Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/12/08/videos-dec-11th-2021/" class="archive-card">
+<h4>Dec 11, 2021</h4>
+<p>Satsang: Vachanamrut 202 Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/12/01/videos-dec-4th-2021/" class="archive-card">
+<h4>Dec 4, 2021</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/11/25/vedanta-class-nov-25th-2021/" class="archive-card">
+<h4>Nov 25, 2021</h4>
+<p>Vedanta Class: Vachanãmrut Gadhadã I-4</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/11/24/videos-nov-27th-2021/" class="archive-card">
+<h4>Nov 27, 2021</h4>
+<p>Satsang in Memory of AN Hariprasad Swami</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/11/18/vedanta-class-november-18th-2021/" class="archive-card">
+<h4>Nov 18, 2021</h4>
+<p>Vedanta Class: Vachanãmrut Gadhadã I-3</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/11/17/videos-nov-20th-2021/" class="archive-card">
+<h4>Nov 20, 2021</h4>
+<p>Devadiwali Satsang</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/11/09/videos-nov-14th-2021/" class="archive-card">
+<h4>Nov 14, 2021</h4>
+<p>Satsang & Annkoot Mahotadav</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/11/01/videos-nov-6th-2021/" class="archive-card">
+<h4>Nov 6, 2021</h4>
+<p>Satsang: Dhanteras, Hanuman Pujan, Diwali, New Year SY 2078</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/10/28/videos-oct-30th-2021/" class="archive-card">
+<h4>Oct 30, 2021</h4>
+<p>Birthday of Shri Vallabhbhai Jhaverbhai Patel</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/10/20/videos-oct-23rd-2021/" class="archive-card">
+<h4>Oct 23, 2021</h4>
+<p>Satsang: Sharad Purnima & Gunatitananda Swami's Appearance Day</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/10/17/vachanamrut-vivechan/" class="archive-card">
+<h4>Oct 17, 2021</h4>
+<p>Vachanamrut Vivechan (286 Lectures)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/10/13/videos-oct-16th-2021/" class="archive-card">
+<h4>Oct 16, 2021</h4>
+<p>Satsang: Dasera (Vijaya Dashmi)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/10/06/videos-oct-9th-2021/" class="archive-card">
+<h4>Oct 9, 2021</h4>
+<p>Satsang: Navratri Celebration</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/10/06/preaching-to-columbian-devotees-dhun/" class="archive-card">
+<h4>Oct 6, 2021</h4>
+<p>Preaching to Columbian Devotees & Dhun</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/10/05/international-swaminarayan-spiritual-center-gurukul-colombia/" class="archive-card">
+<h4>Oct 5, 2021</h4>
+<p>International Swaminarayan Spiritual Center/Gurukul Colombia</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/10/03/international-swaminarayan-spiritual-center-gurukul-santo-domingo/" class="archive-card">
+<h4>Oct 3, 2021</h4>
+<p>International Swaminarayan Spiritual Center/Gurukul Santo Domingo</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/09/29/videos-oct-2nd-2021/" class="archive-card">
+<h4>Oct 2, 2021</h4>
+<p>Satsang: Shriji Smruti Day & Mahatma Gandhi Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/09/22/videos-sept-25th-2021/" class="archive-card">
+<h4>Sep 25, 2021</h4>
+<p>Satsang: Shardh for Parents</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/09/16/videos-sept-18th-2021/" class="archive-card">
+<h4>Sep 18, 2021</h4>
+<p>Satsang: Vaman Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/09/09/videos-sept-9th-2021/" class="archive-card">
+<h4>Sep 9, 2021</h4>
+<p>Shikshapatri Class with Shastri Shri Mukundswarupdasji</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/09/09/videos-sept-11th-2021/" class="archive-card">
+<h4>Sep 11, 2021</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/09/09/videos-september-8th-2021/" class="archive-card">
+<h4>Sep 8, 2021</h4>
+<p>Vedanta Class with Shastri Shri Mukundswarupdasji</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/09/03/videos-sept-2nd-2021/" class="archive-card">
+<h4>Sep 2, 2021</h4>
+<p>Shikshapatri Class</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/09/02/videos-sept-1st-2021/" class="archive-card">
+<h4>Sep 1, 2021</h4>
+<p>Vedanta Class</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/09/01/videos-sept-4th-2021/" class="archive-card">
+<h4>Sep 4, 2021</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/08/26/videos-aug-28th-2021/" class="archive-card">
+<h4>Aug 28, 2021</h4>
+<p>Satsang: Janmashtami/Gokulashtami</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/08/19/videos-aug-21st-2021/" class="archive-card">
+<h4>Aug 21, 2021</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/08/14/videos-aug-14th-2021/" class="archive-card">
+<h4>Aug 14, 2021</h4>
+<p>Satsang: In Gurukul with COVID Precautions</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/08/08/videos-aug-7-2021/" class="archive-card">
+<h4>Aug 7, 2021</h4>
+<p>New Devotee Peter's Experience</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/08/07/videos-aug-07th-2021/" class="archive-card">
+<h4>Aug 7, 2021</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/08/01/videos-july-31st-2021/" class="archive-card">
+<h4>Jul 31, 2021</h4>
+<p>Satsang Dedicated to Parents' 6th Punya Tithi</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/07/26/dec-26th-1992-santo-domingo-kirtans-dr-chaturbhai-j-babaria/" class="archive-card">
+<h4>Jul 26, 2021</h4>
+<p>Dec 26th, 1992: Santo Domingo, Kirtans, Dr. Babaria</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/07/25/videos-july-24th-2021/" class="archive-card">
+<h4>Jul 24, 2021</h4>
+<p>Gurupurnima Celebration with Presentations</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/07/22/ananda-07-19-2021/" class="archive-card">
+<h4>Jul 19, 2021</h4>
+<p>Experiences as Gurukul Member (Session 3 of Brahmasatra)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/07/18/the-disappearance-day-of-two-of-the-great-sadhus-of-our-sampradaya/" class="archive-card">
+<h4>Jul 17, 2021</h4>
+<p>Disappearance Days of Premprakash Dasji & Niranmukata Dasji</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/07/15/disappearance-days-of-two-of-the-great-sadhus-of-our-sampradaya/" class="archive-card">
+<h4>Jul 15, 2021</h4>
+<p>Disappearance Days Notice: Two Great Sadhus</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/07/11/videos-july-10th-2021/" class="archive-card">
+<h4>Jul 10, 2021</h4>
+<p>Satsang: Rath Yatra, Shastriji Maharaj Appearance Day, Shakotsav</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/07/04/explaination-of-july-3rd-2021-satsang-discussion-in-english/" class="archive-card">
+<h4>Jul 3, 2021</h4>
+<p>Satsang Reading in English</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/07/04/videos-july-3rd-2021/" class="archive-card">
+<h4>Jul 3, 2021</h4>
+<p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/06/26/videos-june-26th-2021/" class="archive-card">
+<h4>Jun 26, 2021</h4>
+<p>Satsang Video Archive (Partial Technical Issues)</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/06/20/videos-june-19th-2021/" class="archive-card">
+<h4>Jun 19, 2021</h4>
+<p>Satsang: Lord Swaminarayan's Disappearance Day</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/06/13/videos-june-12th-2021/" class="archive-card">
+    <h4>Jun 12, 2021</h4>
+    <p>Satsang: Shastri Shri Mukundswarupdasji & Shri Dharamcharan Dasji</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/06/06/videos-june-5th-2021/" class="archive-card">
+    <h4>Jun 5, 2021</h4>
+    <p>Disappearance Day of Lord Swaminarayan & Jiten/Vir Birthday</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/05/30/videos-may-29th-2021/" class="archive-card">
+    <h4>May 29, 2021</h4>
+    <p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/05/23/videos-may-22nd-2021/" class="archive-card">
+    <h4>May 22, 2021</h4>
+    <p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/05/16/videos-may-15th-2021/" class="archive-card">
+    <h4>May 15, 2021</h4>
+    <p>Satsang: Mahaprabhuji Appearance Day</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/05/09/videos-satsang-may-8th-2021/" class="archive-card">
+    <h4>May 8, 2021</h4>
+    <p>Satsang: Varuthini Ekadashi & Mother’s Day Celebration</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/05/02/videos-may-1st-2021/" class="archive-card">
+    <h4>May 1, 2021</h4>
+    <p>Satsang: Swaminarayan Jayanti, Rama Navami & Hanuman Jayanti</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/04/24/videos-satsang-april-24th-2021-appearance-day-of-lord-ramachandra-lord-swaminarayan/" class="archive-card">
+    <h4>Apr 24, 2021</h4>
+    <p>Satsang: Appearance Day of Lord Ramachandra & Lord Swaminarayan</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/04/11/videos-apr-10th-2021/" class="archive-card">
+    <h4>Apr 10, 2021</h4>
+    <p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/04/03/videos-apr-3rd-2021/" class="archive-card">
+    <h4>Apr 3, 2021</h4>
+    <p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/03/27/videos-march-27th-2021/" class="archive-card">
+    <h4>Mar 27, 2021</h4>
+    <p>Satsang: Vachanãmrut Gadhadã I-52 & Vachanãmrut 157</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/03/21/videos-mar-20th-2021/" class="archive-card">
+    <h4>Mar 20, 2021</h4>
+    <p>Satsang Video Archive</p>
+
+<a href="https://azvedicgurukul.wordpress.com/2021/03/07/satsang-march-6th-2021/" class="archive-card">
+        <h4>Mar 6, 2021</h4>
+        <p>Satsang: Maha Shivratri</p>
+    </a>
+    <a href="https://azvedicgurukul.wordpress.com/2021/02/27/videos-february-27th-2021/" class="archive-card">
+        <h4>Feb 27, 2021</h4>
+        <p>Satsang Video Archive</p>
+    </a>
+    <a href="https://azvedicgurukul.wordpress.com/2021/02/20/videos-feb-20th-2021/" class="archive-card">
+        <h4>Feb 20, 2021</h4>
+        <p>Satsang: 195th Shikshapatri Jayanti</p>
+    </a>
+    <a href="https://azvedicgurukul.wordpress.com/2021/02/13/videos-february-13th-2021/" class="archive-card">
+        <h4>Feb 13, 2021</h4>
+        <p>Satsang Video Archive</p>
+    </a>
+    <a href="https://azvedicgurukul.wordpress.com/2021/02/07/videos-feb-6th-2021/" class="archive-card">
+        <h4>Feb 6, 2021</h4>
+        <p>Satsang Video Archive</p>
+    </a>
+    <a href="https://azvedicgurukul.wordpress.com/2021/01/31/videos-jan-30th-2021/" class="archive-card">
+        <h4>Jan 30, 2021</h4>
+        <p>Satsang Video Archive</p>
+</a>
+<a href="https://azvedicgurukul.wordpress.com/2021/01/25/swaminarayan-gurukul-santo-domingo/" class="archive-card">
+    <h4>Jan 25, 2021</h4>
+    <p>Swaminarayan Gurukul Santo Domingo</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2021/01/23/videos-jan-23-2021/">
+  <h4>Jan 23, 2021</h4>
+  <p>Satsang Video Archive</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2021/01/16/videos-jan-16-2021/">
+  <h4>Jan 16, 2021</h4>
+  <p>Satsang and Makar Sankranthi Day Celebration</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2021/01/10/videos-january-9th-2021/">
+  <h4>Jan 9, 2021</h4>
+  <p>220th Swaminarayan Mahamantra Pragatya</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2021/01/03/videos-jan-2-2021/">
+  <h4>Jan 2, 2021</h4>
+  <p>Jai Shri KrishnaJai Shri SwaminarayanJai Shri RamachandraOM Namah ShivayahJai Hanuman DadaShri Ganeshay Namah</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/12/19/videos-december-19-2020/">
+  <h4>Dec 19, 2020</h4>
+  <p>Geeta Jayanti, Vachanamrutham 201 Jayanti &amp; Christmas</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/12/12/october-november-2020/">
+  <h4>Oct – Nov, 2020</h4>
+  <p>Saturday Satsangs: October-November 2020 2020-10-03, 2020-10-10, 2020-10-17, 2020-10-24, 2020-10-31, 2020-11-14, 2020-11-21, 2020-11-28</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/11/15/videos-nov-14-2020/">
+  <h4>Nov 14, 2020</h4>
+  <p>Diwali Satsang</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-apr-9-2020/">
+  <h4>Apr 9, 2020</h4>
+  <p>Pujay Krishnaswaroopdasji &amp; Dharmcharan Swami</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-apr-8-2020/">
+  <h4>Mar 22 &amp; 21, 2020</h4>
+  <p>Pujya Krishnaswaroopdasji Swami</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-apr-5-2020/">
+  <h4>Mar 14, 2020</h4>
+  <p>Pujya Krishnaswaroopdasji Swami</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-apr-4-2020/">
+  <h4>Apr 4, 2020</h4>
+  <p>Satsang: Apr 4th, 2020</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-feb-9-2020/">
+  <h4>Feb 9, 2020</h4>
+  <p>Sarangpur 3 Vachanamrut</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-feb-4-2020/">
+  <h4>Feb 4, 2020</h4>
+  <p>Shakotsav Drama &amp; Satsang</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jan-29-2020/">
+  <h4>Jan 29, 2020</h4>
+  <p>Power of Seva</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jan-28-2020/">
+  <h4>Jan 28, 2020</h4>
+  <p>Power Of Seva</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jan-27-2020/">
+  <h4>Jan 27, 2020</h4>
+  <p>Power Of Seva</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jan-25-2020/">
+  <h4>Jan 25, 2020</h4>
+  <p>Power of Seva</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jan-24-2020/">
+  <h4>Jan 24, 2020</h4>
+  <p>Pujay Krushnapriya &amp; Bal Sanskar Shibir</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/video-posted-dec-9-2019/">
+  <h4>Dec 7, 2019</h4>
+  <p>Shrimad Bhagavad Geeta Jayanti</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-dec-8-2019/">
+  <h4>Nov 30, 2019</h4>
+  <p>Vachanamrutam Bicentennial Day</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-dec-7-2019/">
+  <h4>Dec 7, 2019</h4>
+  <p>Pujay Tayagvalbh Swami from Taravda Gurukul – Vachanamrut Dwishtabdi Mahotsav</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-dec-6-2019/">
+  <h4>Dec 6, 2019</h4>
+  <p>Vachanamrut Dwishtabdi Mahotsav</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-dec-5-2019/">
+  <h4>Dec 5, 2019</h4>
+  <p>Vachanamrut Dwishtabdi Mahotsav</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-dec-4-2019/">
+  <h4>Dec 4, 2019</h4>
+  <p>Vachanamrut Dwishtabdi Mahotsav</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-29-2019/">
+  <h4>Nov 29 &amp; 23, 2019</h4>
+  <p>Vachanamrut Dwishtabdi Mahotsav – Vachanamrut Bicentennial</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-28-2019/">
+  <h4>Nov 28, 2019</h4>
+  <p>Vachanamrut Dwishtabdi Mahotsav</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-mar-30-2019/">
+  <h4>Mar 30, 2019</h4>
+  <p>Satsang: Mar 30th, 2019</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-mar-23-2019/">
+  <h4>Mar 23, 2019</h4>
+  <p>Holi Satsang</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-mar-16-2019/">
+  <h4>Mar 16, 2019</h4>
+  <p>Satsang: Mar 16th, 2019</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-mar-2-2019/">
+  <h4>Mar 2, 2019</h4>
+  <p>Shivratri Utsav</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-feb-23-2019/">
+  <h4>Feb 23, 2019</h4>
+  <p>Satsang: Feb 23rd, 2019</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-feb-16-2019/">
+  <h4>Feb 16, 2019</h4>
+  <p>Satsang: Feb 16th, 2019</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-feb-2-2019/">
+  <h4>Feb 2, 2019</h4>
+  <p>Satsang: Feb 2nd, 2019</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jan-26-2019/">
+  <h4>Jan 26, 2019</h4>
+  <p>Satsang: Jan 26th, 2019</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jan-5-2019/">
+  <h4>Jan 5, 2019</h4>
+  <p>Satsang: Jan 5th, 2019</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/video-posted-dec-29-2018/">
+  <h4>Dec 29, 2018</h4>
+  <p>Satsang: Dec 29th, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-dec-22-2018/">
+  <h4>Dec 22, 2018</h4>
+  <p>Geeta Jayanti Satsang</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-dec-15-2018/">
+  <h4>Dec 15, 2018</h4>
+  <p>Vachanamrut Jayanti &amp; 3rd anniversary of the center opening</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-dec-8-2018/">
+  <h4>Dec 8, 2018</h4>
+  <p>Satsang: Dec 8th, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-dec-1-2018/">
+  <h4>Dec 1, 2018</h4>
+  <p>Satsang: Dec 1st, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-24-2018/">
+  <h4>Nov 24, 2018</h4>
+  <p>Satsang: Nov 24th, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-23-2018/">
+  <h4>Nov 23, 2018</h4>
+  <p>Gurukul Step-In Ceremony Springfield, IL.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-17-2018/">
+  <h4>Nov 17, 2018</h4>
+  <p>Satsang: Nov 17th, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-12-2018/">
+  <h4>Nov 12, 2018</h4>
+  <p>Annakut: Clovis, NM.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-10-2018/">
+  <h4>Nov 10, 2018</h4>
+  <p>Annakut Utsav program</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-7-2018/">
+  <h4>Nov 7, 2018</h4>
+  <p>Laxmi Pujan</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-3-2018/">
+  <h4>Nov 3, 2018</h4>
+  <p>Satsang: Nov 3rd, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-nov-2-2018/">
+  <h4>Nov 2, 2018</h4>
+  <p>Satang: Jigneshbhai Trivedi’s home</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-27-2018/">
+  <h4>Oct 27, 2018</h4>
+  <p>Satsang: Oct 27th, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-17-2018/">
+  <h4>Oct 17, 2018</h4>
+  <p>Guru Maharaj in Los Angeles, CA.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-15-2018/">
+  <h4>Oct 15, 2018</h4>
+  <p>Guru Maharaj in Los Angeles, CA.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-14-2018/">
+  <h4>Oct 14, 2018</h4>
+  <p>Guru Maharaj in Los Angeles, CA.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-13-2018/">
+  <h4>Oct 13, 2018</h4>
+  <p>Guru Maharaj In Los Angeles, CA.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-12-2018/">
+  <h4>Oct 12, 2018</h4>
+  <p>Satsang: Los Angeles, CA.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-11-2018/">
+  <h4>Oct 11, 2018</h4>
+  <p>Satsang: Guru Maharaj Los Angeles, CA.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-10-2018/">
+  <h4>Oct 10, 2018</h4>
+  <p>Guru Maharaj In Manteca, CA. Mahapuja In Yuba City, CA.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-9-2018/">
+  <h4>Oct 9, 2018</h4>
+  <p>Guru Maharaj In Yuba City, CA.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-7-2018/">
+  <h4>Oct 7, 2018</h4>
+  <p>Guru Maharaj In San Jose, CA.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-6-2018/">
+  <h4>Oct 6, 2018</h4>
+  <p>Samuh Shraddh Utsav</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-5-2018/">
+  <h4>Oct 5, 2018</h4>
+  <p>Satsang: Seattle</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-oct-2-2018/">
+  <h4>Oct 2, 2018</h4>
+  <p>Satsang: Boise, ID.</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-sep-30-2018/">
+  <h4>Sep 30, 2018</h4>
+  <p>Satsang: Simi Valley</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-sep-29-2018/">
+  <h4>Sep 29, 2018</h4>
+  <p>Satsang: Sep 29th, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-sep-25-2018/">
+  <h4>Sep 25, 2018</h4>
+  <p>Satsang: Dr. Chaturbhai Babaria’s home</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-sep-24-2018/">
+  <h4>Sep 24, 2018</h4>
+  <p>Satsang: Chandrakanbhai Patel’s home</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-sep-22-2018/">
+  <h4>Sep 22, 2018</h4>
+  <p>Shree Guru Maharaj Devkrishna Swami Satsang</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-sep-15-2018/">
+  <h4>Sep 15, 2018</h4>
+  <p>Ganesh Chaturthi Utsav</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-sep-8-2018/">
+  <h4>Sep 8, 2018</h4>
+  <p>Janmashtami Utsav celebration</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-aug-25-2018/">
+  <h4>Aug 25, 2018</h4>
+  <p>Satsang: Aug 25th, 2018 – Experiences</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-aug-17-2018/">
+  <h4>Aug 17, 2018</h4>
+  <p>Mahavishnu Yag: Dallas Gurukul Streamed Live</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-aug-11-2018/">
+  <h4>Aug 11, 2018</h4>
+  <p>Satsang: Aug 11th, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-aug-4-2018/">
+  <h4>Aug 4, 2018</h4>
+  <p>Satsang: Aug 4th, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jul-28-2018/">
+  <h4>July 28, 2018</h4>
+  <p>Satsang: Guru Purnima</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jul-22-2018/">
+  <h4>July 22, 2018</h4>
+  <p>Bhagwat Katha</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jul-21-2018/">
+  <h4>July 21, 2018</h4>
+  <p>Bhagvad Katha – Shree Krishnaswaroop Swami</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jul-20-2018/">
+  <h4>July 20, 2018</h4>
+  <p>Bhagvad Katha</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-jun-3-2018/">
+  <h4>Jun 3, 2018</h4>
+  <p>Prafullbhai – professional tabla teacher</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-may-29-2018/">
+  <h4>May 29, 2018</h4>
+  <p>Satsang: May 29th, 2018</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-apr-14-2018/">
+  <h4>Apr 14, 2018</h4>
+  <p>Om Jignesh Domadia chanting Janmangal Stotram at four years old</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-apr-8-2018/">
+  <h4>Apr 8, 2018</h4>
+  <p>Bhagawad Geeta Purshotam Yoga &amp; Bhaktachintamani</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-mar-25-2018/">
+  <h4>Mar 25, 2018</h4>
+  <p>Dr. Chaturbhai Babaria explains the Vedic teaching of Lord Swaminarayan</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-mar-18-2018/">
+  <h4>Mar 17, 2018</h4>
+  <p>Ram Navami celebration and performances</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-mar-11-2018/">
+  <h4>Mar 10, 2018</h4>
+  <p>Shria and Meera Domadia chanting Janmangal &amp; Satsang Katha</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-mar-4-2018/">
+  <h4>Mar 3, 2018</h4>
+  <p>Shree Hari Yagna &amp; Holi Celebration</p>
+</a>
+
+<a class="archive-card" href="https://azvedicgurukul.wordpress.com/2020/10/25/videos-posted-feb-25-2018/">
+  <h4>Feb 2018</h4>
+  <p>February 2018: Shakoutsav Sabha – Kishorbhai Koladia’s home in El Paso, TX. February 10th, 2018: Maha Shivratri Celebration February 24th, 2018: Satsang Katha</p>
+</a>
+    </div>
+</body>
+</html>
