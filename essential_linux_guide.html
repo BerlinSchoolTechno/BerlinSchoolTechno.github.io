@@ -385,9 +385,11 @@ sudo make install</code></pre>
 <pre><code>#!/bin/bash
 pcmanfm --desktop --profile icewm-session.desktop &
 picom -bcf &
+icesound -i ALSA & play /home/drew/.icewm/sounds/startup.wav
 (sleep 1s && pnmixer) &
-xscreensaver -no-splash &
-/usr/lib/notification-daemon/notification-daemon &</code></pre>
+(sleep 1s && /usr/lib/notification-daemon/notification-daemon) &
+(sleep 1s && /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1) &
+(sleep 1s && xscreensaver -no-splash) &</code></pre>
                     <p>Make executable: <code>chmod +x ~/.icewm/startup</code></p>
                 </div>
 
