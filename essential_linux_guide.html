@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux System & Application Administration, and Configuration Tips</title>
+    <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #151c2c;
+            --bg-card-hover: #1e293b;
+            --bg-code: #090d16;
+            --border-color: #273549;
+            --border-hover: #818cf8;
+            --primary: #818cf8;
+            --secondary: #a855f7;
+            --accent-cyan: #38bdf8;
+            --accent-green: #34d399;
+            --accent-pink: #f472b6;
+            --text-heading: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            margin: 0;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2.5rem 1.5rem;
+            background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px 0 rgba(99, 102, 241, 0.15);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.25rem;
+            color: var(--text-heading);
+            letter-spacing: -0.025em;
+            font-weight: 800;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-heading);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+        }
+
+        .category-nav {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-pill {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .nav-pill:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        .section-title {
+            color: var(--accent-cyan);
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            min-width: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            background-color: var(--bg-card-hover);
+            border-color: var(--border-hover);
+            border-top-color: var(--accent-pink);
+            box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.6), 0 0 15px 0 rgba(129, 140, 248, 0.25);
+        }
+
+        .card h2, .card h3 {
+            margin-top: 0;
+            margin-bottom: 0.85rem;
+            color: #a5b4fc;
+            font-size: 1.2rem;
+            line-height: 1.3;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .card p, .card li {
+            color: var(--text-body);
+            font-size: 0.925rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card ul, .card ol {
+            padding-left: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 0.85rem;
+        }
+
+        .card li {
+            margin-bottom: 0.4rem;
+        }
+
+        .card strong {
+            color: var(--accent-green);
+        }
+
+        pre {
+            background-color: var(--bg-code);
+            padding: 0.85rem;
+            border-radius: 8px;
+            font-size: 0.825rem;
+            border: 1px solid var(--border-color);
+            margin: 0.5rem 0 0.85rem 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Fira Code', Consolas, Monaco, monospace;
+            color: var(--accent-pink);
+            font-size: 0.875em;
+            background-color: rgba(244, 114, 182, 0.1);
+            padding: 0.15em 0.35em;
+            border-radius: 4px;
+        }
+
+        pre code {
+            color: #e2e8f0;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.5rem 0 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        th, td {
+            padding: 0.5rem 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-code);
+            color: var(--accent-cyan);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-main);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Linux System &amp; Application Administration, and Configuration Tips</h1>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search commands, tools, configs, utilities..." onkeyup="filterCards()">
+            </div>
+        </div>
+
+        <div class="category-nav">
+            <a href="#apps" class="nav-pill">Applications & Tools</a>
+            <a href="#icewm" class="nav-pill">IceWM Setup</a>
+            <a href="#clock" class="nav-pill">Clock & Time</a>
+            <a href="#package" class="nav-pill">Package Management</a>
+            <a href="#desktop" class="nav-pill">Desktop Environments</a>
+            <a href="#networking" class="nav-pill">Networking</a>
+            <a href="#storage" class="nav-pill">Storage & Drives</a>
+            <a href="#virtualization" class="nav-pill">Virtualization</a>
+            <a href="#boot" class="nav-pill">Boot & Administration</a>
+            <a href="#cli" class="nav-pill">CLI Utilities</a>
+            <a href="#index" class="nav-pill">Cross Reference</a>
+        </div>
+
+        <main id="mainContent">
+
+            <!-- 1. Applications & Tools -->
+            <h2 id="apps" class="section-title">🚀 Applications, AI &amp; Desktop Tools</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h2>Ollama Local AI</h2>
+                    <p>Ollama is a free, open-source application licensed under MIT that allows you to run large language models (LLMs) locally on your own computer, eliminating cloud service fees or per-token charges.</p>
+                    <ul>
+                        <li><strong>Installation:</strong> <code>curl -fsSL https://ollama.com/install.sh | sh</code></li>
+                        <li><strong>Remove Models:</strong> <code>ollama list</code> then <code>ollama rm [modelname]</code></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Automatically Deleting Ollama Chat History</h2>
+                    <p>Ollama keeps a history of your chats by default in <code>~/.ollama/history</code>. Typing <code>/set nohistory</code> in the CLI only disables logging for the current session.</p>
+                    <p>To automatically delete the history file immediately after exit, run Ollama via a script:</p>
+<pre><code>#!/bin/bash
+clear
+ollama run llama3.1:8b
+rm ~/.ollama/history
+exit 0</code></pre>
+                </div>
+
+                <div class="card">
+                    <h2>Speech Note</h2>
+                    <p>Speech Note is a free, open-source, and privacy-focused app available for Linux and Sailfish OS. It allows users to take, read, and translate notes offline without an internet connection by offering speech-to-text, text-to-speech, and machine translation.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Upscayl</h2>
+                    <p>Upscayl is a free and open-source AI image upscaler desktop application. It enables you to enlarge images without losing quality, operating locally with no hidden costs or subscription fees.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Open-Meteo</h2>
+                    <p>Open-Meteo provides a free weather API for non-commercial, personal use without requiring registration or an API key. It serves as the default data service in the free Cinnamon "Weather" panel applet.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Markdown Cheat Sheet</h2>
+                    <p>Markdown is a lightweight, open-source markup language for formatting documents.</p>
+                    <ul>
+                        <li><strong>Basic Syntax:</strong> Headings (<code>#</code>), Bold (<code>**</code>), Italic (<code>*</code>), Blockquotes (<code>></code>), Lists, Code, Rules (<code>---</code>), Links, Images. Supported universally.</li>
+                        <li><strong>Extended Syntax:</strong> Tables, Fenced Code Blocks, Footnotes, Strikethrough, Task Lists, Emoji, Highlights, Subscript/Superscript.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>mp3gain</h2>
+                    <p>Normalize volume across multiple audio files without quality degradation:</p>
+<pre><code>sudo apt install mp3gain
+mp3gain *.MP3 *.mp3</code></pre>
+                </div>
+
+                <div class="card">
+                    <h2>Prevent Google Login Prompts in Chrome</h2>
+                    <p>To block identity service popups in Google Chrome:</p>
+                    <ol>
+                        <li>Navigate to <code>chrome://settings/content/federatedIdentityApi</code> in the address bar.</li>
+                        <li>Set Default behavior to <strong>Block sign-in prompts from identity services</strong>.</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h2>What Are AAE Files?</h2>
+                    <p>AAE files are XML sidecar files used by the Apple Photos app to track modifications made to photos. They store edit data separately so the original photo remains untouched and edits can be undone anytime.</p>
+                </div>
+
+            </div>
+
+            <!-- 2. IceWM Installation & Configuration -->
+            <h2 id="icewm" class="section-title">⚡ IceWM Installation &amp; Configuration</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Debian Base &amp; Desktop Utilities Setup</h3>
+                    <p>Install core Xorg and desktop utilities on Debian Bullseye base:</p>
+<pre><code># Base Xorg Install
+su -
+apt install xserver-xorg-video-all xserver-xorg-core xinit
+
+# Desktop Utilities
+apt install lightdm pnmixer pavucontrol pulseaudio alsa-utils gsimplecal lxterminal mousepad atril firefox-esr lxappearance synaptic sudo xscreensaver xarchiver picom pcmanfm lightdm-gtk-greeter-settings lzip</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>Compiling &amp; Installing IceWM 3.3.4</h3>
+                    <p>Compile IceWM 3.3.4 from source on Debian:</p>
+<pre><code>wget https://ice-wm.org/scripts/os-depends.sh
+sudo bash -x ./os-depends.sh
+
+# Download, compile and install
+wget https://github.com/ice-wm/icewm/releases/download/3.3.4/icewm-3.3.4.tar.lz
+tar -x --lzip -vpf icewm-3.3.4.tar.lz
+cd icewm-3.3.4
+./configure --prefix=/usr
+make
+sudo make install</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>IceWM Startup Script Configuration</h3>
+                    <p>Create user startup file at <code>~/.icewm/startup</code>:</p>
+<pre><code>#!/bin/bash
+pcmanfm --desktop --profile icewm-session.desktop &
+picom -bcf &
+(sleep 1s && pnmixer) &
+xscreensaver -no-splash &
+/usr/lib/notification-daemon/notification-daemon &</code></pre>
+                    <p>Make executable: <code>chmod +x ~/.icewm/startup</code></p>
+                </div>
+
+                <div class="card">
+                    <h3>Panel Tray Applets &amp; Audio Setup</h3>
+                    <ul>
+                        <li><strong>Clock Applet:</strong> Set panel clock in <code>~/.icewm/preferences</code> to launch <code>gsimplecal</code> on left click.</li>
+                        <li><strong>Volume Control:</strong> Right-click <code>pnmixer</code> tray icon &gt; Preferences &gt; Behavior &gt; Set volume command to <code>pavucontrol</code>.</li>
+                        <li><strong>Toolbar Icons:</strong> Add application launchers and <code>.xpm</code> icons to <code>~/.icewm/toolbar</code>.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>IceWM Dynamic Menu Generation</h3>
+                    <p>IceWM uses <code>icewm-menu-fdo</code> to generate menus dynamically. Add to <code>~/.icewm/menu</code>:</p>
+<pre><code>includeprog icewm-menu-fdo --no-sep-others --seps</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>IceWM Themes &amp; Visual Appearance</h3>
+                    <p>Place icon and theme directories in <code>~/.icons</code> and <code>~/.themes</code>. Configure GTK widget styles and icon sets using <code>lxappearance</code>.</p>
+                </div>
+            </div>
+
+            <!-- 3. Clock, Date & Time Settings -->
+            <h2 id="clock" class="section-title">🕒 Clock, Date &amp; Time Settings</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>IceWM Clock Preferences &amp; Presets</h3>
+                    <p>Config location: <code>~/.icewm/preferences</code></p>
+<pre><code>ClockCommand="gsimplecal"
+TimeFormat="%I:%M %p"</code></pre>
+                    <ul>
+                        <li><strong>Full Date/Time:</strong> <code>%A, %B %d, %Y: %I:%M %p</code></li>
+                        <li><strong>12-Hour Time:</strong> <code>%I:%M %p</code></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>LightDM Clock &amp; Time Zone</h3>
+                    <p>Configure LightDM Greeter clock format:</p>
+<pre><code>sudo lightdm-gtk-greeter-settings</code></pre>
+                    <p>Set clock format to <code>%c</code> under Panel tab.</p>
+                    <p>Set System Time Zone:</p>
+<pre><code>sudo timedatectl set-timezone America/New_York</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>Dual-Boot Hardware Clock Sync</h3>
+                    <p>Synchronize hardware clock when dual-booting with Windows:</p>
+<pre><code># Force local time RTC for Windows compatibility
+timedatectl set-local-rtc 1 --adjust-system-clock
+
+# Revert to UTC standard
+timedatectl set-local-rtc 0 --adjust-system-clock</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>Common strftime Format Reference</h3>
+                    <table>
+                        <tr><th>Code</th><th>Description</th></tr>
+                        <tr><td><code>%A</code> / <code>%a</code></td><td>Full / Abbreviated weekday name</td></tr>
+                        <tr><td><code>%B</code> / <code>%b</code></td><td>Full / Abbreviated month name</td></tr>
+                        <tr><td><code>%d</code> / <code>%Y</code></td><td>Day (01-31) / 4-digit Year</td></tr>
+                        <tr><td><code>%I</code> / <code>%H</code></td><td>12-Hour / 24-Hour format</td></tr>
+                        <tr><td><code>%M</code> / <code>%p</code></td><td>Minute / AM or PM</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 4. Package & System Management -->
+            <h2 id="package" class="section-title">📦 Package &amp; System Management</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Configuring &amp; Upgrading Fedora</h3>
+                    <p>Enable RPM Fusion Repositories:</p>
+<pre><code>sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# Install multimedia plugins
+sudo dnf group install multimedia</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>Disable Multiarch &amp; Flatpak Install</h3>
+                    <p>Purge 32-bit i386 architecture:</p>
+<pre><code>sudo apt purge .*:i386
+sudo dpkg --remove-architecture i386</code></pre>
+                    <p>Install Flatpak on Debian:</p>
+<pre><code>sudo apt install flatpak gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>Remove Ollama from Fedora</h3>
+                    <p>Cleanly remove Ollama and models from Fedora system:</p>
+<pre><code>ollama rm "model-name"
+sudo systemctl stop ollama
+sudo systemctl disable ollama
+sudo rm /etc/systemd/system/ollama.service
+sudo rm $(which ollama)
+sudo rm -r /usr/share/ollama
+sudo userdel ollama
+sudo groupdel ollama</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>update-alternatives &amp; Hostname</h3>
+                    <p>Configure default applications:</p>
+<pre><code>update-alternatives --get-selections
+sudo update-alternatives --config x-www-browser</code></pre>
+                    <p>Change System Hostname:</p>
+<pre><code>sudo nano /etc/hostname
+sudo nano /etc/hosts</code></pre>
+                </div>
+            </div>
+
+            <!-- 5. Desktop Environments & GUI -->
+            <h2 id="desktop" class="section-title">🖥️ Desktop Environments &amp; GUI</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>GNOME Shell Apps Extension Fix</h3>
+                    <p>Fix missing GMenu typelib error on Debian:</p>
+<pre><code>sudo apt install gir1.2-gmenu-3.0
+killall -3 gnome-shell</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>Openbox &amp; tint2 Configuration</h3>
+                    <ul>
+                        <li><strong>Openbox Keybinding:</strong> Launch Rofi with <code>Super+R</code> defined in <code>~/.config/openbox/rc.xml</code>.</li>
+                        <li><strong>tint2 Applets:</strong> Run <code>gsimplecal</code> for calendar and <code>pnmixer &amp;</code> in <code>autostart.sh</code>.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>LightDM Auto-Login &amp; User Avatar</h3>
+                    <p>Configure auto-login in <code>/etc/lightdm/lightdm.conf</code>:</p>
+<pre><code>[Seat:*]
+autologin-user=<username>
+autologin-user-timeout=0</code></pre>
+                    <p>Set avatar in <code>/var/lib/AccountsService/users/&lt;username&gt;</code>:</p>
+<pre><code>[User]
+Icon=/home/<username>/.face</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>xsettingsd &amp; Icon Caches</h3>
+                    <p>Update desktop icon caches:</p>
+<pre><code>sudo update-icon-caches /usr/share/icons/*
+sudo update-icon-caches ~/.icons/*</code></pre>
+                    <p>Create config <code>~/.config/xsettingsd/xsettingsd.conf</code>:</p>
+<pre><code>Xft/Hinting 1
+Xft/HintStyle "hintslight"
+Xft/Antialias 1
+Xft/RGBA "rgb"</code></pre>
+                </div>
+            </div>
+
+            <!-- 6. Networking & Remote Access -->
+            <h2 id="networking" class="section-title">🌐 Networking &amp; Remote Access</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Static IP Configuration (Debian 13)</h3>
+                    <p>Edit <code>/etc/network/interfaces</code>:</p>
+<pre><code>auto eth0
+iface eth0 inet static
+    address 192.168.1.100
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+    dns-nameservers 8.8.8.8 8.8.4.4</code></pre>
+                    <p>Restart networking: <code>sudo systemctl restart networking</code></p>
+                </div>
+
+                <div class="card">
+                    <h3>Restart Interface &amp; Firewall (UFW)</h3>
+                    <p>Request new DHCP lease:</p>
+<pre><code>sudo ifconfig eno1 down && sudo ifconfig eno1 up</code></pre>
+                    <p>Configure Firewall:</p>
+<pre><code>sudo apt install ufw
+sudo ufw enable
+sudo ufw status verbose</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>X11 Forwarding &amp; PuTTY</h3>
+                    <p>Connect with X11 Forwarding:</p>
+<pre><code>ssh -X user@192.168.0.129</code></pre>
+                    <p><strong>PuTTY Copy/Paste:</strong> Right-click pastes clipboard contents directly into the session. Shift+Insert performs the same action.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Monitoring Open Ports &amp; Services</h3>
+<pre><code># List all listening TCP/UDP ports
+sudo ss -tulpn
+
+# Find process running on a specific port
+sudo lsof -i :80</code></pre>
+                </div>
+            </div>
+
+            <!-- 7. Storage, Drives & File Systems -->
+            <h2 id="storage" class="section-title">💾 Storage, Drives &amp; File Systems</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Change Drive Ownership &amp; Permissions</h3>
+                    <p>Grant folder/drive ownership permissions:</p>
+<pre><code>sudo chown -R user:user /media/user/drive-uuid/</code></pre>
+                    <p>Grant read/write permissions:</p>
+<pre><code>sudo chmod ugo+wx /mnt/storage-drive/</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>SSD TRIM Configuration</h3>
+                    <p>Run TRIM manually or enable background weekly timer:</p>
+<pre><code>sudo fstrim -v /
+sudo systemctl enable fstrim.timer
+sudo systemctl start fstrim.timer</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>USB Drive Image Creation (dd)</h3>
+                    <p>Create image from drive:</p>
+<pre><code>sudo dd if=/dev/sdc of=~/thumbdrive.img bs=4M; sync</code></pre>
+                    <p>Restore image to USB drive:</p>
+<pre><code>sudo dd if=~/thumbdrive.img of=/dev/sdc bs=4M; sync</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>fstab Mount Settings &amp; Usage</h3>
+                    <p>Get partition UUID using <code>blkid</code>. Example <code>/etc/fstab</code> entry:</p>
+<pre><code>UUID=b7a839e3-82a1... /mnt/storage auto nosuid,nodev,nofail,x-gvfs-show 0 0</code></pre>
+                    <p>Check disk space usage:</p>
+<pre><code>df -h
+du -sh /path/to/folder</code></pre>
+                </div>
+            </div>
+
+            <!-- 8. Virtualization & Emulation -->
+            <h2 id="virtualization" class="section-title">📦 Virtualization &amp; Emulation</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Fix VirtualBox vboxdrv Error</h3>
+                    <p>Load VirtualBox driver kernel module:</p>
+<pre><code>sudo modprobe vboxdrv</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>GNOME Boxes VM Backup</h3>
+                    <p>Backup VM disk images located in <code>~/.local/share/gnome-boxes/images/</code>. Copy the image file to external storage and copy back to restore.</p>
+                </div>
+
+                <div class="card">
+                    <h3>VirtualBox Guest Additions</h3>
+                    <p>Install Guest Additions and add user to shared folder group:</p>
+<pre><code>sudo apt install build-essential linux-headers-$(uname -r) -y
+sudo ./VBoxLinuxAdditions.run
+sudo usermod -aG vboxsf user</code></pre>
+                </div>
+            </div>
+
+            <!-- 9. Boot, Kernel & System Administration -->
+            <h2 id="boot" class="section-title">⚙️ Boot, Kernel &amp; System Administration</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Fix Intel Graphics Screen Flicker</h3>
+                    <p>In Fedora 41, edit <code>/etc/default/grub</code>:</p>
+<pre><code>GRUB_CMDLINE_LINUX="i915.enable_psr=0 intel_idle.max_cstate=2 rhgb quiet"</code></pre>
+                    <p>Update GRUB config:</p>
+<pre><code>sudo grub2-mkconfig -o /boot/grub2/grub.cfg</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>User &amp; Group Management</h3>
+                    <p>Remove user from group and delete group:</p>
+<pre><code>sudo gpasswd -d user vboxusers
+sudo groupdel vboxusers</code></pre>
+                    <p>Clean unwanted EFI folders in <code>/boot/efi/EFI</code> using <code>rm -r</code>.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Hardware Info &amp; Resource Monitoring</h3>
+                    <p>Detailed hardware summary:</p>
+<pre><code>sudo apt install inxi
+inxi -Fxz</code></pre>
+                    <p>Resource monitoring commands:</p>
+<pre><code>htop
+free -h
+sudo journalctl -xe</code></pre>
+                </div>
+            </div>
+
+            <!-- 10. Command-Line Utilities & File Operations -->
+            <h2 id="cli" class="section-title">🛠️ Command-Line Utilities &amp; Media Tools</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Audio &amp; Image File Processing</h3>
+                    <p>Combine WAV files using SoX:</p>
+<pre><code>sudo apt install sox
+sox 1.wav 2.wav 3.wav output.wav</code></pre>
+                    <p>Strip image metadata using mogrify:</p>
+<pre><code>sudo apt install graphicsmagick-imagemagick-compat
+mogrify -strip image.png</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>trash-cli Utilities</h3>
+                    <p>Command line trash management:</p>
+<pre><code>sudo apt install trash-cli
+trash-put file.txt   # Move to trash
+trash-list           # List trashed items
+trash-restore        # Restore item
+trash-empty          # Empty trash</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>Archives &amp; Fast File Search</h3>
+                    <p>Extract <code>.tar.lz</code> archive:</p>
+<pre><code>sudo apt install lzip
+tar -x --lzip -vpf archive.tar.lz</code></pre>
+                    <p>Fast searching with <code>fd-find</code>:</p>
+<pre><code>sudo apt install fd-find
+fd search_term</code></pre>
+                </div>
+            </div>
+
+            <!-- 11. Cross-Reference Index -->
+            <h2 id="index" class="section-title">📌 Linux Cross-Reference Index</h2>
+            <div class="grid">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <h3>All Indexed Topics</h3>
+                    <p>AAE Files, Apps Extension Fix For Gnome Shell, Automatically Deleting Ollama Chat History, Change USB Drive Ownership, Combine WAV files, Configure Static IP Debian 13, Configure fstab, Configuring & Upgrading Fedora, Create Image USB Drive, Disable Multiarch Support, Fix Intel Graphics Flicker, Fix vboxdrv Error, Give R-W Permissions, GNOME Boxes VM Backup, VirtualBox Guest Additions, Install Flatpak Debian, Install Gnome Extensions, Markdown Cheat Sheet, Modify Lightdm Login, mp3gain, Ollama Setup & Removal, Open-Meteo, Openbox Keybindings, Prevent Google Sign-in Prompts, Putty Cut & Paste, Remove EFI Folders, Remove User Group, Restart Ethernet, Speech Note, Strip Metadata, Sync Dual-Boot Time, tint2 applets, trash-cli, Trim SSDs, Update GRUB Fedora 41, update-alternatives, update-icon-caches, Upscayl, What Are AAE Files, X11 Forwarding, xsettingsd.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function filterCards() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
