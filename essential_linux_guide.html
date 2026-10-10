@@ -265,7 +265,6 @@
 
         <div class="category-nav">
             <a href="#apps" class="nav-pill">Applications & Tools</a>
-            <a href="#icewm" class="nav-pill">IceWM Setup</a>
             <a href="#clock" class="nav-pill">Clock & Time</a>
             <a href="#package" class="nav-pill">Package Management</a>
             <a href="#desktop" class="nav-pill">Desktop Environments</a>
@@ -350,78 +349,11 @@ mp3gain *.MP3 *.mp3</code></pre>
 
             </div>
 
-            <!-- 2. IceWM Installation & Configuration -->
-            <h2 id="icewm" class="section-title">⚡ IceWM Installation &amp; Configuration</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Debian Base &amp; Desktop Utilities Setup</h3>
-                    <p>Install core Xorg and desktop utilities on Debian Bullseye base:</p>
-<pre><code># Base Xorg Install
-su -
-apt install xserver-xorg-video-all xserver-xorg-core xinit
-
-# Desktop Utilities
-apt install lightdm pnmixer pavucontrol pulseaudio alsa-utils gsimplecal lxterminal mousepad atril firefox-esr lxappearance synaptic sudo xscreensaver xarchiver picom pcmanfm lightdm-gtk-greeter-settings lzip</code></pre>
-                </div>
-
-                <div class="card">
-                    <h3>Compiling &amp; Installing IceWM 3.3.4</h3>
-                    <p>Compile IceWM 3.3.4 from source on Debian:</p>
-<pre><code>wget https://ice-wm.org/scripts/os-depends.sh
-sudo bash -x ./os-depends.sh
-
-# Download, compile and install
-wget https://github.com/ice-wm/icewm/releases/download/3.3.4/icewm-3.3.4.tar.lz
-tar -x --lzip -vpf icewm-3.3.4.tar.lz
-cd icewm-3.3.4
-./configure --prefix=/usr
-make
-sudo make install</code></pre>
-                </div>
-
-                <div class="card">
-                    <h3>IceWM Startup Script Configuration</h3>
-                    <p>Create user startup file at <code>~/.icewm/startup</code>:</p>
-<pre><code>#!/bin/bash
-pcmanfm --desktop --profile icewm-session.desktop &
-picom -bcf &
-icesound -i ALSA & play /home/user/.icewm/sounds/startup.wav
-(sleep 1s && pnmixer) &
-(sleep 1s && /usr/lib/notification-daemon/notification-daemon) &
-(sleep 1s && /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1) &
-(sleep 1s && xscreensaver -no-splash) &</code></pre>
-                    <p>Make executable: <code>chmod +x ~/.icewm/startup</code></p>
-                </div>
-
-                <div class="card">
-                    <h3>Panel Tray Applets &amp; Audio Setup</h3>
-                    <ul>
-                        <li><strong>Clock Applet:</strong> Set panel clock in <code>~/.icewm/preferences</code> to launch <code>gsimplecal</code> on left click.</li>
-                        <li><strong>Volume Control:</strong> Right-click <code>pnmixer</code> tray icon &gt; Preferences &gt; Behavior &gt; Set volume command to <code>pavucontrol</code>.</li>
-                        <li><strong>Toolbar Icons:</strong> Add application launchers and <code>.xpm</code> icons to <code>~/.icewm/toolbar</code>.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3>IceWM Dynamic Menu Generation</h3>
-                    <p>IceWM uses <code>icewm-menu-fdo</code> to generate menus dynamically. Add to <code>~/.icewm/menu</code>:</p>
-<pre><code>includeprog icewm-menu-fdo --no-sep-others --seps</code></pre>
-                </div>
-
-                <div class="card">
-                    <h3>IceWM Themes &amp; Visual Appearance</h3>
-                    <p>Place icon and theme directories in <code>~/.icons</code> and <code>~/.themes</code>. Configure GTK widget styles and icon sets using <code>lxappearance</code>.</p>
-                </div>
-            </div>
-
-            <!-- 3. Clock, Date & Time Settings -->
             <h2 id="clock" class="section-title">🕒 Clock, Date &amp; Time Settings</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>IceWM Clock Preferences &amp; Presets</h3>
-                    <p>Config location: <code>~/.icewm/preferences</code></p>
-<pre><code>ClockCommand="gsimplecal"
-TimeFormat="%I:%M %p"</code></pre>
+                    <h3>Clock Preferences &amp; Presets</h3>
+                    <pre><code>TimeFormat="%I:%M %p"</code></pre>
                     <ul>
                         <li><strong>Full Date/Time:</strong> <code>%A, %B %d, %Y: %I:%M %p</code></li>
                         <li><strong>12-Hour Time:</strong> <code>%I:%M %p</code></li>
